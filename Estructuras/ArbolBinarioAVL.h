@@ -330,7 +330,7 @@ void ArbolBinarioAVL<T>::inorder(NodoArbolAVL<T> *r)
   }
 
   inorder(r->getLeft());
-  std::cout << r->getData() << " ";
+  std::cout << r->getData() << " "<< endl;
   inorder(r->getRight());
 }
 

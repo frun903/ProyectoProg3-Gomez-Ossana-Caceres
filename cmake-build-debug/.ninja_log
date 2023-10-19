@@ -1,0 +1,26 @@
+# ninja log v5
+4	596	7194259883910343	build.ninja	abc5ea473fab5ac5
+0	1505	7194259902216742	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+1527	2552	7194259912648175	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+8	2665	7194266544655646	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+2666	3998	7194266559042694	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+5	892	7194267212841813	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+893	1212	7194267215970052	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+4	495	7194267882173955	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+497	745	7194267884618359	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+7	841	7194270599663286	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+880	1221	7194270603353253	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+4	628	7194271483257464	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+629	908	7194271485695656	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+28	1363	7194328266904120	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+1374	3115	7194328284380104	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+6	1258	7194329113393083	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+1259	1887	7194329119628200	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+3	699	7194330812973525	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+723	1437	7194330820048179	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+4	555	7194331020751972	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+614	1203	7194331027174691	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+5	1066	7194332991318034	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+1067	1368	7194332994285493	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
+4	572	7194333828378717	CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj	b670329b50d81b2d
+622	874	7194333831363693	ProyectoProg3_Gomez_Ossana_Caceres.exe	9aa0517d5510ece9
