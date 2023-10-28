@@ -11,9 +11,10 @@ class NodoArbolAVL {
 private:
     T data;
     NodoArbolAVL *left, *right;
+
     int height;
     Lista<U> lista; // defino que mi nodo tambien tiene una lista
-
+    int sumaDatoslista;
 
 
 public:
@@ -28,6 +29,7 @@ public:
         left = nullptr;
         right = nullptr;
         height = 1;
+        sumaDatoslista=0;
     }
 
     T getData() const {
@@ -62,10 +64,16 @@ public:
         height = h;
     }
 
+    int getSumaDatosLista(){
+        return sumaDatoslista;
+    }
+
+
 
 // inserta en la lista como siempre lo ha hacho
     void insertarEnListaConDepo(U elemento,U deposito) {
         lista.insertarUltimoDatYdepo(elemento,deposito);
+        sumaDatoslista=sumaDatoslista+elemento;
     }
 
 // funcion para imprimir las listas de cada nodo como siempre

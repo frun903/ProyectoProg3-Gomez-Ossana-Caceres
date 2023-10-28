@@ -19,10 +19,15 @@ int main() {
     string linea;
     string dato;
     string primerlinea;
-  int dato_num;
+    int dato_num, cantidadTotalDeArticulosDiferentes=0, cantidadTotalDeArticulos=0;
+    int contadordecolumnas=0;
+    ArbolBinario<streambuf> arbol1;
+    ArbolBinarioAVL<string,int> arbol2;
+
+
     // debemos ver como manejar la definicion de los depositos ya que estos son dinamicos.
     // int deposito1, deposito2, deposito3,deposito4 ,deposito5, ;
-    int contadordecolumnas;
+
 
     Lista<string> listaDecolunas;
     //Lista<string> listaPrueba;
@@ -33,7 +38,7 @@ int main() {
 
 
     ifstream inventario; // definimos un archivo
-    inventario.open("InventariadoPrueba.csv"); // abrimos el archvo
+    inventario.open("Inventariado Fisico.csv"); // abrimos el archvo
 
     //aca despues nesesitamos empezar a medir el tiempo;
 
@@ -44,11 +49,10 @@ int main() {
     // y a la vez contamos la cantidad de columnas que vamos a tener.
     getline(inventario, linea);
     stringstream linea2;
-    ArbolBinario<streambuf> arbol1;
-    ArbolBinarioAVL<string,int> arbol2;
+
     linea2.str(linea);
     {
-        while (getline(linea2, dato, delimitadorDeColumn)) { // aca contamos la cantida de columans
+        while (getline(linea2, dato, ',')) { // aca contamos la cantida de columans
             listaDecolunas.insertarUltimo(dato); // las guardamos en una lista por ahora.
             contadordecolumnas++; // sabemos que las primeras 3 siempre van a ser de grupo, cod y articulo, lo demas seran depositos.
         }
@@ -75,13 +79,13 @@ int main() {
 
             if (i == 1) {  // elijo la columa articulos y creo un nuevo nodo con esto
                 // arbol2.put(dato);
-
                 arbol2.put(dato);
+                cantidadTotalDeArticulosDiferentes++;
             }
             if(i>2 && dato!= ""){
                 dato_num= stoi(dato);
                 arbol2.agregarAListaUltimoNodo(dato_num, i-2);
-
+                cantidadTotalDeArticulos=cantidadTotalDeArticulos+dato_num;
 
             }
             //if(i>3){ // si es mas que dos estoy a nivel de los depositos
@@ -98,13 +102,18 @@ int main() {
     arbol2.imprimirListaNodo("AMLM-VT J02 A");
     if (arbol2.search("AMLM-VT J02 A") ){
         cout<<"se encontro el nodo"<<endl;
-        arbol2.searchAndRemove("AMLM-VT J02 A");
+        //arbol2.searchAndRemove("AMLM-VT J02 A");
         if(arbol2.search("AMLM-VT J02 A")){
         }cout<<"no se encontro el archvivo";
     }
 
-
-
+    cout<<"la cantidad total de articulos diferentes es: "<<cantidadTotalDeArticulosDiferentes<<endl;
+    cout<<"la cantidad total de articulos es "<<cantidadTotalDeArticulos<<endl;
+    cout<<"el estok del articulo SMFS45 SIN/REG-DERECHA es:"
+    cout<< arbol2.getSumaDatosNodo("SMFS45 SIN/REG-DERECHA");
+// esto es solo una pruenba se supone que se integra en una funcion mas grande que imprime todos los productos
+// con su respectivo stock
+ inventario.close();
 }
 
 
