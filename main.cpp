@@ -19,18 +19,21 @@ int main() {
     string linea;
     string dato;
     string primerlinea;
-    string Grupo, codigoBarras, articulo;
+  int dato_num;
     // debemos ver como manejar la definicion de los depositos ya que estos son dinamicos.
     // int deposito1, deposito2, deposito3,deposito4 ,deposito5, ;
     int contadordecolumnas;
-    ArbolBinarioAVL<string> arbol1;
+
     Lista<string> listaDecolunas;
+    //Lista<string> listaPrueba;
+
+
 
     char delimitadorDeColumn = ',';
 
 
     ifstream inventario; // definimos un archivo
-    inventario.open("Inventariado Fisico.csv"); // abrimos el archvo
+    inventario.open("InventariadoPrueba.csv"); // abrimos el archvo
 
     //aca despues nesesitamos empezar a medir el tiempo;
 
@@ -41,50 +44,74 @@ int main() {
     // y a la vez contamos la cantidad de columnas que vamos a tener.
     getline(inventario, linea);
     stringstream linea2;
+    ArbolBinario<streambuf> arbol1;
+    ArbolBinarioAVL<string,int> arbol2;
     linea2.str(linea);
     {
         while (getline(linea2, dato, delimitadorDeColumn)) { // aca contamos la cantida de columans
             listaDecolunas.insertarUltimo(dato); // las guardamos en una lista por ahora.
-            contadordecolumnas++// sabemos que las primeras 3 siempre van a ser de grupo, cod y articulo, lo demas seran depositos.
+            contadordecolumnas++; // sabemos que las primeras 3 siempre van a ser de grupo, cod y articulo, lo demas seran depositos.
         }
     };
-    cout << "cantidad de columnas son " << contadordecolumnas;
+    cout << "cantidad de columnas son " << contadordecolumnas << endl;
 
 
     while (getline(inventario, linea)) { // mientras el archivo este abierto o no sea el final.
         // aca tambien podria decir  while ( !inventario.eof)
+
 
         stringstream stream(linea); // Convertir la cadena a un stream
 
 
         // con este for, hago que los elementos que estan en la columna 1 me los meta en un arbol
         // podria hacer que me meta lo de otra columna en algun otra estructura.
-        for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
+        for (int i = 0; getline(stream, dato, ','); i++) {
 
             //0= grupo
             //1= codigo de barras
             //2= articulos
             // todo lo demas deposito.
 
-            if (i == 1) {  //
-                arbol1.put(dato);
+
+            if (i == 1) {  // elijo la columa articulos y creo un nuevo nodo con esto
+                // arbol2.put(dato);
+
+                arbol2.put(dato);
             }
+            if(i>2 && dato!= ""){
+                dato_num= stoi(dato);
+                arbol2.agregarAListaUltimoNodo(dato_num, i-2);
+
+
+            }
+            //if(i>3){ // si es mas que dos estoy a nivel de los depositos
+            // lo que estos contengan los quiero en mi lista, que tiene que corresponder justamente al nodo
+            // arbol2.agregarAListaUltimoNodo(dato);}
+
         }
+
+        // si imprimo deveria ver la lista de los depositos para cada nodo ingresado
+
 
 
     }
-    arbol1.inorder();
+    arbol2.imprimirListaNodo("AMLM-VT J02 A");
+    if (arbol2.search("AMLM-VT J02 A") ){
+        cout<<"se encontro el nodo"<<endl;
+        arbol2.searchAndRemove("AMLM-VT J02 A");
+        if(arbol2.search("AMLM-VT J02 A")){
+        }cout<<"no se encontro el archvivo";
+    }
+
+
+
 }
 
-/*
-        getline(stream, Grupo,',');
-        getline(stream, codigoBarras, ',');
-        getline(stream, articulo, ',');
-        getline(stream, deposito1, ',');
-        getline(stream, deposito2, ',');
-        getline(stream, deposito3, ',');
-        getline(stream,deposito4,',');
-*/
+
+
+
+
+
 /*
    int main(int argc,char **argv ){
        string archivo= argev[argv-1];

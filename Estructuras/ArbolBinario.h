@@ -33,6 +33,12 @@ public:
 
   void Pdiferentes();
 
+  void insertarEnLista(T data, T elemento);  // nuevo
+
+  void imprimirListaNodo(T data); // nuevo
+
+    void printListas();   // nuevo
+
 private:
   T search(T data, NodoArbol<T> *r);
   NodoArbol<T> *put(T data, NodoArbol<T> *r);
@@ -41,6 +47,7 @@ private:
   void preorder(NodoArbol<T> *r);
   void inorder(NodoArbol<T> *r);
   void postorder(NodoArbol<T> *r);
+  void imprimirListas(NodoArbol<T> *nodo); // nuevo
 };
 
 /**
@@ -246,7 +253,7 @@ void ArbolBinario<T>::preorder(NodoArbol<T> *r)
     return;
   }
 
-  std::cout << r->getData() << " ";
+  std::cout << r->getData() << " "<<endl;
   preorder(r->getLeft());
   preorder(r->getRight());
 }
@@ -308,8 +315,80 @@ void ArbolBinario<T>::print()
 }
 
 template <class T>
+void ArbolBinario<T>::printListas()  // nuevo
+{
+    if (root != nullptr)
+    {
+        imprimirListas(root);
+    }
+}
+
+template <class T>
+void ArbolBinario<T>::imprimirListas(NodoArbol<T> *nodo)  // nuevo
+{
+    if (nodo != nullptr)
+    {
+        cout << "Lista del nodo con valor " << nodo->getData() << ": ";
+        nodo->imprimirLista();
+        cout << endl;
+
+        imprimirListas(nodo->getLeft());
+        imprimirListas(nodo->getRight());
+    }
+}
+
+
+
+
+template <class T>
 void ArbolBinario<T>::Pdiferentes() {
     cout<<"El archivo tiene "<<  PalabrasDiferentes <<" palabras distintas\n";
+}
+
+// Nueva función para insertar elementos en la lista de un nodo específico
+template <class T>
+void ArbolBinario<T>::insertarEnLista(T data, T elemento) // nuevo
+{
+    NodoArbol<T> *nodo = root;
+    while (nodo != nullptr)
+    {
+        if (data == nodo->getData())
+        {
+            nodo->insertarEnLista(elemento);
+            return;
+        }
+        else if (data < nodo->getData())
+        {
+            nodo = nodo->getLeft();
+        }
+        else
+        {
+            nodo = nodo->getRight();
+        }
+    }
+}
+
+// Nueva función para imprimir la lista de un nodo específico
+template <class T>
+void ArbolBinario<T>::imprimirListaNodo(T data)
+{
+    NodoArbol<T> *nodo = root;
+    while (nodo != nullptr)
+    {
+        if (data == nodo->getData())
+        {
+            nodo->imprimirLista();
+            return;
+        }
+        else if (data < nodo->getData())
+        {
+            nodo = nodo->getLeft();
+        }
+        else
+        {
+            nodo = nodo->getRight();
+        }
+    }
 }
 
 #endif // U05_ARBOL_ARBOL_ARBOLBINARIO_H_

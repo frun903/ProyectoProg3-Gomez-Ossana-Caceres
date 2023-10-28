@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "ProyectoProg3_Gomez_Ossana_Caceres",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,8 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ProyectoProg3_Gomez_Ossana_Caceres::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ProyectoProg3_Gomez_Ossana_Caceres-Debug-66ca42331ab132734079.json",
+					"jsonFile" : "target-ProyectoProg3_Gomez_Ossana_Caceres-Debug-273b8013a767ddf86f43.json",
 					"name" : "ProyectoProg3_Gomez_Ossana_Caceres",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pruebaCodigo.cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pruebaCodigo.cpp-Debug-7806ceb8238adabd09ae.json",
+					"name" : "pruebaCodigo.cpp",
 					"projectIndex" : 0
 				}
 			]

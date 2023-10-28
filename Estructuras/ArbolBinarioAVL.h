@@ -3,18 +3,21 @@
 
 #include "NodoArbolAVL.h"
 
-template <class T>
+template <class T, class U>
 class ArbolBinarioAVL
 {
 protected:
-  NodoArbolAVL<T> *root;
+  NodoArbolAVL<T,U> *root;
 
 public:
   ArbolBinarioAVL();
 
   void put(T data);
 
-  T search(T data);
+  bool search(T data);
+
+  // implementamos buscar y remover;
+  bool searchAndRemove(T data);
 
   void remove(T data);
 
@@ -35,21 +38,33 @@ public:
     return getBalance(root);
   }
 
+    // nuevas funciones para trabajar con listas:
+    void insertarEnLista(T data, U elemento, U depositos);
+
+    void imprimirListaNodo(T data);
+
+    void agregarAListaUltimoNodo(U elemento, U deposito) ;  // funcion que agrega elementos a lista en el ultimo nodo que ingreso.
+
+
+
 private:
-  T search(T data, NodoArbolAVL<T> *r);
-  void preorder(NodoArbolAVL<T> *r);
-  void inorder(NodoArbolAVL<T> *r);
-  void postorder(NodoArbolAVL<T> *r);
+
+  bool search(T data, NodoArbolAVL<T,U> *r);
+  bool searchAndRemove(T data, NodoArbolAVL<T,U> *r);
+    void preorder(NodoArbolAVL<T,U> *r);
+  void inorder(NodoArbolAVL<T,U> *r);
+  void postorder(NodoArbolAVL<T,U> *r);
 
   int max(int a, int b);
-  int calculateHeight(NodoArbolAVL<T> *r);
-  int getBalance(NodoArbolAVL<T> *r);
-  NodoArbolAVL<T> *rotacionDerecha(NodoArbolAVL<T> *y);
-  NodoArbolAVL<T> *rotacionIzquierda(NodoArbolAVL<T> *x);
-  NodoArbolAVL<T> *put(T data, NodoArbolAVL<T> *r);
-  NodoArbolAVL<T> *remove(T data, NodoArbolAVL<T> *r);
-
-  NodoArbolAVL<T> *findMin(NodoArbolAVL<T> *r);
+  int calculateHeight(NodoArbolAVL<T,U> *r);
+  int getBalance(NodoArbolAVL<T,U> *r);
+    NodoArbolAVL<T,U> *rotacionDerecha(NodoArbolAVL<T,U> *y);
+    NodoArbolAVL<T,U> *rotacionIzquierda(NodoArbolAVL<T,U> *x);
+    NodoArbolAVL<T,U> *put(T data, NodoArbolAVL<T,U> *r); // modifico el put para el ultimo nodo ingresado.
+    NodoArbolAVL<T,U> *remove(T data, NodoArbolAVL<T,U> *r);
+    NodoArbolAVL<T,U> *findMin(NodoArbolAVL<T,U> *r);
+    NodoArbolAVL<T,U> *ultimoNodoInsertado; // declaramos un puntero al ultimo nodo ingresado;
+    NodoArbolAVL<T,U> *findUltimoNodoInsertado(NodoArbolAVL<T,U> *r);  // funcion para encontrar el ultimo nodo ingresado
 };
 
 /**
@@ -57,14 +72,20 @@ private:
  * @tparam K Clave por la cual va a ordenar el árbol
  * @tparam T Valor guardado por el árbol
  */
-template <class T>
-ArbolBinarioAVL<T>::ArbolBinarioAVL() { root = nullptr; }
+ // constructor sirve para inicializar cosas:
+template<class T, class U>
+ArbolBinarioAVL<T,U>::ArbolBinarioAVL() {
+    root = nullptr;
+     ultimoNodoInsertado = nullptr;  // Inicializa el puntero al último nodo ingresado
+
+ }
+
 
 /**
  * Destructor del Arbol
  */
-template <class T>
-ArbolBinarioAVL<T>::~ArbolBinarioAVL() {}
+template<class T, class U>
+ArbolBinarioAVL<T,U>::~ArbolBinarioAVL() {}
 
 /**
  * Busca un dato en el árbol. Si no esta el dato en el árbol
@@ -72,50 +93,111 @@ ArbolBinarioAVL<T>::~ArbolBinarioAVL() {}
  * @param clave Valor a buscar
  * @return el valor buscado
  */
-template <class T>
-T ArbolBinarioAVL<T>::search(T data)
+
+
+// modificamos search para que sea tipo bool
+
+template<class T, class U>
+bool ArbolBinarioAVL<T,U>::search(T data)
 {
-  return search(data, root);
+    return search(data, root);
 }
 
-template <class T>
-T ArbolBinarioAVL<T>::search(T data, NodoArbolAVL<T> *r)
+
+
+template<class T, class U>
+bool ArbolBinarioAVL<T,U>::search(T data, NodoArbolAVL<T,U> *r)
 {
-  if (r == nullptr)
-  {
-    throw 404;
-  }
+    if (r == nullptr)
+    {
+        return false; // El valor no se encontró, retorna false.
+    }
 
-  if (r->getData() == data)
-  {
-    return r->getData();
-  }
+    if (r->getData() == data)
+    {
+        return true; // El valor se encontró, retorna true.
+    }
 
-  if (r->getData() > data)
-  {
-    return search(data, r->getLeft());
-  }
-  else
-  {
-    return search(data, r->getRight());
-  }
+    if (r->getData() > data)
+    {
+        return search(data, r->getLeft());
+    }
+    else
+    {
+        return search(data, r->getRight());
+    }
 }
+
+
+template<class T, class U>
+bool ArbolBinarioAVL<T,U>::searchAndRemove(T data)
+{
+    return searchAndRemove(data, root);
+}
+
+
+
+// implementamos una funcion que busca y elimina
+template<class T, class U>
+bool ArbolBinarioAVL<T, U>::searchAndRemove(T data, NodoArbolAVL<T, U> *r)
+{
+    if (r == nullptr)
+    {
+        return false; // El valor no se encontró, retorna false.
+    }
+
+    if (r->getData() == data)
+    {
+        root = remove(data, root); // Elimina el nodo encontrado y ajusta el árbol.
+        return true; // El valor se encontró y se eliminó, retorna true.
+    }
+
+    if (r->getData() > data)
+    {
+        return searchAndRemove(data, r->getLeft());
+    }
+    else
+    {
+        return searchAndRemove(data, r->getRight());
+    }
+}
+
+
+
+
+
 
 /**
  * Agrega un dato al árbol
  * @param clave Clave para agregar el dato
  * @param dato Dato a agregar
  */
-template <class T>
-void ArbolBinarioAVL<T>::put(T data) { root = put(data, root); }
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::put(T data) {
+    root = put(data, root);
+    ultimoNodoInsertado = findUltimoNodoInsertado(root); // ultimo nodo ingresado= al resultado de esta funcion;
+}
 
-template <class T>
-NodoArbolAVL<T> *ArbolBinarioAVL<T>::put(T data, NodoArbolAVL<T> *r)
+template<class T, class U>
+NodoArbolAVL<T,U> *ArbolBinarioAVL<T,U>::findUltimoNodoInsertado(NodoArbolAVL<T,U>* r) {
+    if (r == nullptr) {
+        return nullptr;
+    }
+    while (r->getRight() != nullptr) {
+        r = r->getRight();
+    }
+    return r;
+}
+
+
+
+template<class T, class U>
+NodoArbolAVL<T,U> *ArbolBinarioAVL<T,U>::put(T data, NodoArbolAVL<T,U> *r)
 {
   //1. Realizar Insercion normal
   if (r == nullptr)
   {
-    return new NodoArbolAVL<T>(data);
+    return new NodoArbolAVL<T,U>(data);
   }
 
   if (r->getData() == data)
@@ -168,18 +250,22 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::put(T data, NodoArbolAVL<T> *r)
   return r;
 }
 
+
+
+
+
 /**
  * Elimina un dato del árbol
  * @param clave Clave para identificar el nodo a borrar
  */
-template <class T>
-void ArbolBinarioAVL<T>::remove(T data)
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::remove(T data)
 {
   root = remove(data, root);
 }
 
-template <class T>
-NodoArbolAVL<T> *ArbolBinarioAVL<T>::remove(T data, NodoArbolAVL<T> *r)
+template<class T, class U>
+NodoArbolAVL<T,U> *ArbolBinarioAVL<T,U>::remove(T data, NodoArbolAVL<T,U> *r)
 {
   if (r == nullptr)
     return r;
@@ -203,7 +289,7 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::remove(T data, NodoArbolAVL<T> *r)
     // Si r no tiene sub nodos, o si tiene uno solo
     if ((r->getLeft() == nullptr) || (r->getRight() == nullptr))
     {
-      NodoArbolAVL<T> *temp = r->getLeft() ? r->getLeft() : r->getRight();
+      NodoArbolAVL<T,U> *temp = r->getLeft() ? r->getLeft() : r->getRight();
 
       // En caso de que no tenga
       if (temp == nullptr)
@@ -221,7 +307,7 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::remove(T data, NodoArbolAVL<T> *r)
 
       // Nodo r con dos sub nodos: Se debe obtener el
       // sucesor inorder (el mas chico en el subarbol derecho)
-      NodoArbolAVL<T> *temp = findMin(r->getRight());
+      NodoArbolAVL<T,U> *temp = findMin(r->getRight());
 
       // Copiar la data del sucesor inorder en r
       r->setData(temp->getData());
@@ -269,11 +355,11 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::remove(T data, NodoArbolAVL<T> *r)
   return r;
 }
 
-template <class T>
-NodoArbolAVL<T> *ArbolBinarioAVL<T>::findMin(NodoArbolAVL<T> *r)
+template<class T, class U>
+NodoArbolAVL<T,U> *ArbolBinarioAVL<T,U>::findMin(NodoArbolAVL<T,U> *r)
 {
   {
-    NodoArbolAVL<T> *ret = r;
+    NodoArbolAVL<T,U> *ret = r;
     while (ret->getLeft() != nullptr)
       ret = ret->getLeft();
 
@@ -285,21 +371,21 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::findMin(NodoArbolAVL<T> *r)
  * Informa si un árbol esta vacío
  * @return
  */
-template <class T>
-bool ArbolBinarioAVL<T>::esVacio() { return root == nullptr; }
+template<class T, class U>
+bool ArbolBinarioAVL<T,U>::esVacio() { return root == nullptr; }
 
 /**
  * Recorre un árbol en preorden
  */
-template <class T>
-void ArbolBinarioAVL<T>::preorder()
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::preorder()
 {
   preorder(root);
   std::cout << std::endl;
 }
 
-template <class T>
-void ArbolBinarioAVL<T>::preorder(NodoArbolAVL<T> *r)
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::preorder(NodoArbolAVL<T,U> *r)
 {
   if (r == nullptr)
   {
@@ -314,15 +400,15 @@ void ArbolBinarioAVL<T>::preorder(NodoArbolAVL<T> *r)
 /**
  * Recorre un árbol en orden
  */
-template <class T>
-void ArbolBinarioAVL<T>::inorder()
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::inorder()
 {
   inorder(root);
   std::cout << std::endl;
 }
 
-template <class T>
-void ArbolBinarioAVL<T>::inorder(NodoArbolAVL<T> *r)
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::inorder(NodoArbolAVL<T,U> *r)
 {
   if (r == nullptr)
   {
@@ -337,15 +423,15 @@ void ArbolBinarioAVL<T>::inorder(NodoArbolAVL<T> *r)
 /**
  * Recorre un árbol en postorden
  */
-template <class T>
-void ArbolBinarioAVL<T>::postorder()
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::postorder()
 {
   postorder(root);
   std::cout << std::endl;
 }
 
-template <class T>
-void ArbolBinarioAVL<T>::postorder(NodoArbolAVL<T> *r)
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::postorder(NodoArbolAVL<T,U> *r)
 {
   if (r == nullptr)
   {
@@ -360,21 +446,21 @@ void ArbolBinarioAVL<T>::postorder(NodoArbolAVL<T> *r)
 /**
  * Muestra un árbol por consola
  */
-template <class T>
-void ArbolBinarioAVL<T>::print()
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::print()
 {
   if (root != NULL)
     root->print(false, "");
 }
 
-template <class T>
-int ArbolBinarioAVL<T>::max(int a, int b)
+template<class T, class U>
+int ArbolBinarioAVL<T,U>::max(int a, int b)
 {
   return (a > b) ? a : b;
 }
 
-template <class T>
-int ArbolBinarioAVL<T>::calculateHeight(NodoArbolAVL<T> *r)
+template<class T, class U>
+int ArbolBinarioAVL<T,U>::calculateHeight(NodoArbolAVL<T,U> *r)
 {
   if (r == nullptr)
   {
@@ -383,8 +469,8 @@ int ArbolBinarioAVL<T>::calculateHeight(NodoArbolAVL<T> *r)
   else
     return r->getHeight();
 }
-template <class T>
-int ArbolBinarioAVL<T>::getBalance(NodoArbolAVL<T> *r)
+template<class T, class U>
+int ArbolBinarioAVL<T,U>::getBalance(NodoArbolAVL<T,U> *r)
 {
   if (r == nullptr)
   {
@@ -392,11 +478,11 @@ int ArbolBinarioAVL<T>::getBalance(NodoArbolAVL<T> *r)
   }
   return calculateHeight(r->getLeft()) - calculateHeight(r->getRight());
 }
-template <class T>
-NodoArbolAVL<T> *ArbolBinarioAVL<T>::rotacionDerecha(NodoArbolAVL<T> *y)
+template<class T, class U>
+NodoArbolAVL<T,U> *ArbolBinarioAVL<T,U>::rotacionDerecha(NodoArbolAVL<T,U> *y)
 {
-  NodoArbolAVL<T> *x = y->getLeft();
-  NodoArbolAVL<T> *T2 = x->getRight();
+  NodoArbolAVL<T,U> *x = y->getLeft();
+  NodoArbolAVL<T,U> *T2 = x->getRight();
 
   //Rotacion
   x->setRight(y);
@@ -410,11 +496,11 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::rotacionDerecha(NodoArbolAVL<T> *y)
   return x;
 }
 
-template <class T>
-NodoArbolAVL<T> *ArbolBinarioAVL<T>::rotacionIzquierda(NodoArbolAVL<T> *x)
+template<class T, class U>
+NodoArbolAVL<T,U> *ArbolBinarioAVL<T,U>::rotacionIzquierda(NodoArbolAVL<T,U> *x)
 {
-  NodoArbolAVL<T> *y = x->getRight();
-  NodoArbolAVL<T> *T2 = y->getLeft();
+  NodoArbolAVL<T,U> *y = x->getRight();
+  NodoArbolAVL<T,U> *T2 = y->getLeft();
 
   //Rotacion
   y->setLeft(x);
@@ -427,5 +513,64 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::rotacionIzquierda(NodoArbolAVL<T> *x)
   //Devolver la nueva raiz
   return y;
 }
+
+// nuevas funciones para inseratar en lista, inserta en el nodo del arbol
+// que contiene un dato, un elemento en la lista
+
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::insertarEnLista(T data, U elemento, U deposito)
+{
+    NodoArbolAVL<T,U> *nodo = root;
+    while (nodo != nullptr)
+    {
+        if (data == nodo->getData()) // si encuentra el nodo con el dato
+        {
+            nodo->insertarEnLista(elemento,deposito);  // lo inserta en la lista
+            return;
+        }
+        else if (data < nodo->getData()) // sino sigue buscando por derecha e izquierda recursivamente.
+        {
+            nodo = nodo->getLeft();
+        }
+        else
+        {
+            nodo = nodo->getRight();
+        }
+    }
+}
+
+// Nueva función para imprimir la lista de un nodo específico que yo paso por paramtro,
+// podria implementar una que busque un dato espesifico en los nodos de las listas.
+template<class T, class U>
+void ArbolBinarioAVL<T,U>::imprimirListaNodo(T data)
+{
+    NodoArbolAVL<T,U> *nodo = root;
+    while (nodo != nullptr)
+    {
+        if (data == nodo->getData()) // si es el nodo que busco:
+        {
+            nodo->imprimirLista(); // Llama a la función pública de imprimirLista en el nodo
+
+            return;
+        }
+        else if (data < nodo->getData())  // sino sigo buscando por derecha o izquierda.
+        {
+            nodo = nodo->getLeft();
+        }
+        else
+        {
+            nodo = nodo->getRight();
+        }
+    }
+}
+
+//funcio que agrega datos a la lista de el ultimo nodo que se agrego;
+template<class T, class U >
+void ArbolBinarioAVL<T,U>::agregarAListaUltimoNodo(U elemento, U deposito) {
+    if (ultimoNodoInsertado != nullptr) {
+        ultimoNodoInsertado->insertarEnListaConDepo( elemento, deposito);
+    }
+}
+
 
 #endif // U05_ARBOL_ARBOL_ARBOLBINARIOAVL_H_

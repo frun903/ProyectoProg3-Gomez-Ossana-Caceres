@@ -55,6 +55,12 @@ build CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj: CXX_COMPIL
   OBJECT_DIR = CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir
   OBJECT_FILE_DIR = CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir
 
+build CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/pruebaCodigo.cpp.obj: CXX_COMPILER__ProyectoProg3_Gomez_Ossana_Caceres_unscanned_Debug D$:/UCC/UNIVERSIDAD$ 2023/Segundo$ Semestre/programacion$ 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/pruebaCodigo.cpp || cmake_object_order_depends_target_ProyectoProg3_Gomez_Ossana_Caceres
+  DEP_FILE = CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir\pruebaCodigo.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir
+  OBJECT_FILE_DIR = CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ProyectoProg3_Gomez_Ossana_Caceres
@@ -63,7 +69,7 @@ build CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj: CXX_COMPIL
 #############################################
 # Link the executable ProyectoProg3_Gomez_Ossana_Caceres.exe
 
-build ProyectoProg3_Gomez_Ossana_Caceres.exe: CXX_EXECUTABLE_LINKER__ProyectoProg3_Gomez_Ossana_Caceres_Debug CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj
+build ProyectoProg3_Gomez_Ossana_Caceres.exe: CXX_EXECUTABLE_LINKER__ProyectoProg3_Gomez_Ossana_Caceres_Debug CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/pruebaCodigo.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir
@@ -72,6 +78,39 @@ build ProyectoProg3_Gomez_Ossana_Caceres.exe: CXX_EXECUTABLE_LINKER__ProyectoPro
   TARGET_FILE = ProyectoProg3_Gomez_Ossana_Caceres.exe
   TARGET_IMPLIB = libProyectoProg3_Gomez_Ossana_Caceres.dll.a
   TARGET_PDB = ProyectoProg3_Gomez_Ossana_Caceres.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target pruebaCodigo.cpp
+
+
+#############################################
+# Order-only phony target for pruebaCodigo.cpp
+
+build cmake_object_order_depends_target_pruebaCodigo.cpp: phony || CMakeFiles/pruebaCodigo.cpp.dir
+
+build CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.obj: CXX_COMPILER__pruebaCodigo.2ecpp_unscanned_Debug D$:/UCC/UNIVERSIDAD$ 2023/Segundo$ Semestre/programacion$ 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/pruebaCodigo.cpp || cmake_object_order_depends_target_pruebaCodigo.cpp
+  DEP_FILE = CMakeFiles\pruebaCodigo.cpp.dir\pruebaCodigo.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\pruebaCodigo.cpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\pruebaCodigo.cpp.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target pruebaCodigo.cpp
+
+
+#############################################
+# Link the executable pruebaCodigo.cpp.exe
+
+build pruebaCodigo.cpp.exe: CXX_EXECUTABLE_LINKER__pruebaCodigo.2ecpp_Debug CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\pruebaCodigo.cpp.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = pruebaCodigo.cpp.exe
+  TARGET_IMPLIB = libpruebaCodigo.cpp.dll.a
+  TARGET_PDB = pruebaCodigo.cpp.exe.dbg
 
 
 #############################################
@@ -101,6 +140,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build ProyectoProg3_Gomez_Ossana_Caceres: phony ProyectoProg3_Gomez_Ossana_Caceres.exe
 
+build pruebaCodigo.cpp: phony pruebaCodigo.cpp.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -109,7 +150,7 @@ build ProyectoProg3_Gomez_Ossana_Caceres: phony ProyectoProg3_Gomez_Ossana_Cacer
 #############################################
 # Folder: D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug
 
-build all: phony ProyectoProg3_Gomez_Ossana_Caceres.exe
+build all: phony ProyectoProg3_Gomez_Ossana_Caceres.exe pruebaCodigo.cpp.exe
 
 # =============================================================================
 # Built-in targets

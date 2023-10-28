@@ -2,9 +2,8 @@
 #define U05_ARBOL_ARBOL_NODOARBOL_H_
 
 #include <string.h>
+#include "Lista.h"
 using namespace std;
-
-
 
 
 template <class T>
@@ -13,6 +12,7 @@ class NodoArbol
 private:
   T data;
   int oc=1;
+  Lista<T> lista;
   NodoArbol *left, *right;
 
 public:
@@ -57,6 +57,16 @@ public:
   {
     this->left = l;
   }
+
+    void insertarEnLista(T elemento)
+    {
+        lista.insertarUltimo(elemento); // Inserta elemento en la lista del nodo
+    }
+
+    void imprimirLista()
+    {
+        lista.print(); // Imprime la lista de elementos del nodo
+    }
 
    void print(bool esDerecho, string identacion) {
     if (right != NULL) {

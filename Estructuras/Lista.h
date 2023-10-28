@@ -28,17 +28,26 @@ public:
 
   int getTamanio();
 
-  void insertar(int pos, T dato);
+  void insertar(int pos, T dato , T deposito);
 
-  void insertarPrimero(T dato);
+  void insertarPrimero(T dato, T deposito );
 
+
+  // modificamos insertar ultimo para que tenga mas de un dato mi lista;
   void insertarUltimo(T dato);
+
+    void insertarUltimoDatYdepo(T dato, T deposito);
+
 
   void remover(int pos);
 
   T getDato(int pos);
 
-  void reemplazar(int pos, T dato);
+  // nueva funcion implementada
+   T getDeposito(int pos);
+
+
+    void reemplazar(int pos, T dato);
 
   void vaciar();
 
@@ -98,11 +107,12 @@ template <class T> int Lista<T>::getTamanio() {
  * @param pos lugar donde será insertado el dato
  * @param dato  dato a insertar
  */
-template <class T> void Lista<T>::insertar(int pos, T dato) {
+template <class T> void Lista<T>::insertar(int pos, T dato, T deposito) {
   int posActual = 0;
   Nodo<T> *aux = inicio, *nuevo;
   nuevo = new Nodo<T>;
   nuevo->setDato(dato);
+  nuevo->seetDato(deposito);
 
   if (pos == 0) {
     nuevo->setSiguiente(inicio);
@@ -128,17 +138,20 @@ template <class T> void Lista<T>::insertar(int pos, T dato) {
  * @tparam T
  * @param dato dato a insertar
  */
-template <class T> void Lista<T>::insertarPrimero(T dato) { insertar(0, dato); }
+template <class T> void Lista<T>::insertarPrimero(T dato, T deposito) { insertar(0, dato, deposito); }
 
 /**
  * Inserta un nodo con el dato en la ultima posicion
  * @tparam T
  * @param dato dato a insertar
  */
-template <class T> void Lista<T>::insertarUltimo(T dato) {
+
+// modificamos para que  acepte el dato de deposito.
+template <class T> void Lista<T>::insertarUltimoDatYdepo(T dato, T deposito) {
   Nodo<T> *aux = inicio, *nuevo;
   nuevo = new Nodo<T>;
-  nuevo->setDato(dato);
+    nuevo->setDeposito(deposito);
+    nuevo->setDato(dato);
 
   if (aux == nullptr) {
     nuevo->setSiguiente(inicio);
@@ -152,6 +165,25 @@ template <class T> void Lista<T>::insertarUltimo(T dato) {
 
   nuevo->setSiguiente(aux->getSiguiente());
   aux->setSiguiente(nuevo);
+}
+
+template <class T> void Lista<T>::insertarUltimo(T dato) {
+    Nodo<T> *aux = inicio, *nuevo;
+    nuevo = new Nodo<T>;
+    nuevo->setDato(dato);
+
+    if (aux == nullptr) {
+        nuevo->setSiguiente(inicio);
+        inicio = nuevo;
+        return;
+    }
+
+    while (aux->getSiguiente() != nullptr) {
+        aux = aux->getSiguiente();
+    }
+
+    nuevo->setSiguiente(aux->getSiguiente());
+    aux->setSiguiente(nuevo);
 }
 
 /**
@@ -212,6 +244,29 @@ template <class T> T Lista<T>::getDato(int pos) {
  * @param pos posicion donde se desea reemplazar
  * @param dato nuevo dato a almacenar
  */
+
+// implementada por nosotros:
+
+template <class T> T Lista<T>::getDeposito(int pos){
+    Nodo<T> *aux = inicio;
+    int posActual = 0;
+
+    while (aux != nullptr && posActual < pos) {
+        aux = aux->getSiguiente();
+        posActual++;
+    }
+
+    if (aux == nullptr) {
+        throw 404;
+    }
+
+    return aux->getDeposito();
+}
+
+
+
+
+
 template <class T> void Lista<T>::reemplazar(int pos, T dato) {
   Nodo<T> *aux = inicio;
   int posActual = 0;
