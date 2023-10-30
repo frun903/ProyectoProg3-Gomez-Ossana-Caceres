@@ -27,11 +27,11 @@ class Nodo{
         deposito = depo;
     }
 
-    /*
+
        Nodo<T> *getSiguiente(){
            return siguiente;
        }
-*/
+
        void setSiguiente(Nodo<T> *siguiente){
            this->siguiente = siguiente;
        }

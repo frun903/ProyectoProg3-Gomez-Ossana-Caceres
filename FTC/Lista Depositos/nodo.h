@@ -6,7 +6,7 @@ class Nodo{
     private:
     T deposito;
     T dato;
-        Nodo<T> *siguiente;
+    Nodo<T> *siguiente;
     
     public:
        T getDato(){

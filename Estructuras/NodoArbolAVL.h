@@ -13,7 +13,7 @@ private:
     NodoArbolAVL *left, *right;
     int height;
     // defino que mi nodo tambien tiene una lista
-    ListaFT<T> lista; // lista es depositos en el codigo de fran.
+    ListaFT<int> lista; // lista es depositos en el codigo de fran.
     int stock;
 
 
@@ -26,7 +26,9 @@ public:
         right = nullptr;
         height = 1;
         //sumaDatoslista=0;
-        stock=0;
+        stock=s;
+        lista =l;
+
 
     }
 // esto seria get nombre en el codigo de fran.
@@ -71,17 +73,16 @@ public:
         return stock;
     }
 
-    void setStock(int d){
-        stock = d;
+    void setSdepositos(ListaFT<int> listaFt){
+        lista = listaFt;
     }
-
 
     void getdepositos(){
         lista.print();
     }
 
-    void setDepositos(ListaFT<U> listaFt){
-        lista = listaFt;
+    void setstock(){
+
     }
 
 /*

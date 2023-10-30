@@ -11,7 +11,7 @@ protected:
 public:
     ArbolBinarioAVL();
 
-    void put(T data,U deposito, V lista );
+    void put(T data,U stock, V lista );
 
     bool search(T data);
 
@@ -172,18 +172,18 @@ NodoArbolAVL<T, U,V> *ArbolBinarioAVL<T, U, V>::findUltimoNodoInsertado(NodoArbo
 };
 
 template<class T, class U, class V>
-void ArbolBinarioAVL<T, U, V>::put(T data, U deposito, V lista) {
+void ArbolBinarioAVL<T, U, V>::put(T data, U stock, V lista) {
 
-    root = put(data, deposito, lista, root);
-    root->setDepositos(lista);
+    root = put(data, stock, lista, root);
+
     // último nodo ingresado = al resultado de esta función;
 }
 
 template<class T, class U, class V>
-NodoArbolAVL<T, U, V> *ArbolBinarioAVL<T, U, V>::put(T data, U deposito, V lista, NodoArbolAVL<T, U, V> *r) {
+NodoArbolAVL<T, U, V> *ArbolBinarioAVL<T, U, V>::put(T data, U stock, V lista, NodoArbolAVL<T, U, V> *r) {
     // Realizar la inserción normal
     if (r == nullptr) {
-        return new NodoArbolAVL<T, U, V>(data, deposito, lista);
+        return new NodoArbolAVL<T, U, V>(data, stock, lista);
     }
 
     if (r->getData() == data) {
@@ -191,9 +191,9 @@ NodoArbolAVL<T, U, V> *ArbolBinarioAVL<T, U, V>::put(T data, U deposito, V lista
     }
 
     if (r->getData() > data) {
-        r->setLeft(put(data, deposito, lista, r->getLeft()));
+        r->setLeft(put(data, stock, lista, r->getLeft()));
     } else {
-        r->setRight(put(data, deposito, lista, r->getRight()));
+        r->setRight(put(data, stock, lista, r->getRight()));
     }
 
     // Actualizar la altura de este nodo padre
