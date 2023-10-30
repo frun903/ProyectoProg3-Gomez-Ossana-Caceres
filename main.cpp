@@ -8,7 +8,7 @@
 #include <string>
 
 #include "Estructuras/Cola.h"
-#include "Estructuras/Lista.h"
+#include "Estructuras/ListaFT.h"
 #include "Estructuras/ArbolBinario.h"
 #include "Estructuras/ArbolBinarioAVL.h"
 

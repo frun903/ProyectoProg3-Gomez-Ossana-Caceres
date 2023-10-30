@@ -5,7 +5,7 @@
 #ifndef UNTITLED2_NODOES_H
 #define UNTITLED2_NODOES_H
 #include "string"
-#include "ListaFT.h"
+#include "../../Estructuras/ListaFT.h"
 
 
 class NodoES{

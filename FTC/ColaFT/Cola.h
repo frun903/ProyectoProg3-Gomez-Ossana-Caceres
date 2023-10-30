@@ -1,6 +1,6 @@
 #ifndef U04_COLAS_COLA_COLA_H_
 #define U04_COLAS_COLA_COLA_H_
-#include "/home/frang/untitled2/Lista/nodoES.h"
+#include "../ColaFT/nodoES.h"
 #include "Cliente.h"
 #include <string>
 #include <iostream>
