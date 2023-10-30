@@ -38,7 +38,7 @@ int main() {
 
 
     ifstream inventario; // definimos un archivo
-    inventario.open("Inventariado Fisico.csv"); // abrimos el archvo
+    inventario.open("InventariadoPrueba.csv"); // abrimos el archvo
 
     //aca despues nesesitamos empezar a medir el tiempo;
 
@@ -86,7 +86,7 @@ int main() {
                 dato_num= stoi(dato);
                 arbol2.agregarAListaUltimoNodo(dato_num, i-2);
                 cantidadTotalDeArticulos=cantidadTotalDeArticulos+dato_num;
-
+                arbol2.inorder();
             }
             //if(i>3){ // si es mas que dos estoy a nivel de los depositos
             // lo que estos contengan los quiero en mi lista, que tiene que corresponder justamente al nodo
@@ -95,8 +95,6 @@ int main() {
         }
 
         // si imprimo deveria ver la lista de los depositos para cada nodo ingresado
-
-
 
     }
     arbol2.imprimirListaNodo("AMLM-VT J02 A");
@@ -109,11 +107,30 @@ int main() {
 
     cout<<"la cantidad total de articulos diferentes es: "<<cantidadTotalDeArticulosDiferentes<<endl;
     cout<<"la cantidad total de articulos es "<<cantidadTotalDeArticulos<<endl;
-    cout<<"el estok del articulo SMFS45 SIN/REG-DERECHA es:"
-    cout<< arbol2.getSumaDatosNodo("SMFS45 SIN/REG-DERECHA");
+    cout<<"el estok del articulo SMFS45 SIN/REG-DERECHA es:";
+
+
+    // esta funcion me devuelve la suma de los datos de un nodo, nesesito una que me imprima el arbol
+    // completo y tambien los datos de stock;
+    cout<< arbol2.getSumaDatosNodo("SMGFS-120");
 // esto es solo una pruenba se supone que se integra en una funcion mas grande que imprime todos los productos
 // con su respectivo stock
+
+
+
+// llamo al inorder pero en realidad lo modifique para que devuuelva el producto y tambien el stock de cada producto.
+arbol2.inorder();
+
+
+//si imprimo las listas que estan guardadas en estos nodos, veo que en una se guardan datos de otro,
+// esto me dice que falla la funcion de guardar la direccion de memoria y cargan en cualquier lado.
+arbol2.imprimirListaNodo("SMGFS-90");
+arbol2.imprimirListaNodo("CTLANIN-330-75");
+
+
+
  inventario.close();
+ // nesesito hacer una fucion que imprima todos los nodos con su respectivo estock;
 }
 
 

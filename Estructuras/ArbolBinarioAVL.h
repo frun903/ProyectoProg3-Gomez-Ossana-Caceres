@@ -7,7 +7,7 @@ template<class T, class U>
 class ArbolBinarioAVL {
 protected:
     NodoArbolAVL<T, U> *root;
-
+    NodoArbolAVL<T, U> *ultimoNodoInsertado;
 public:
     ArbolBinarioAVL();
 
@@ -35,6 +35,7 @@ public:
     int getBalance() {
         return getBalance(root);
     }
+
 
     // nuevas funciones para trabajar con listas:
 
@@ -65,9 +66,8 @@ private:
     NodoArbolAVL<T, U> *put(T data, NodoArbolAVL<T, U> *r); // modifico el put para el ultimo nodo ingresado.
     NodoArbolAVL<T, U> *remove(T data, NodoArbolAVL<T, U> *r);
     NodoArbolAVL<T, U> *findMin(NodoArbolAVL<T, U> *r);
-    NodoArbolAVL<T, U> *ultimoNodoInsertado; // declaramos un puntero al ultimo nodo ingresado;
-    NodoArbolAVL<T, U> *
-    findUltimoNodoInsertado(NodoArbolAVL<T, U> *r);  // funcion para encontrar el ultimo nodo ingresado
+    // declaramos un puntero al ultimo nodo ingresado;
+    NodoArbolAVL<T, U> *findUltimoNodoInsertado(NodoArbolAVL<T, U> *r);  // funcion para encontrar el ultimo nodo ingresado
 };
 
 /**
@@ -155,21 +155,27 @@ bool ArbolBinarioAVL<T, U>::searchAndRemove(T data, NodoArbolAVL<T, U> *r) {
  * @param clave Clave para agregar el dato
  * @param dato Dato a agregar
  */
-template<class T, class U>
-void ArbolBinarioAVL<T, U>::put(T data) {
-    root = put(data, root);
-    ultimoNodoInsertado = findUltimoNodoInsertado(root); // ultimo nodo ingresado= al resultado de esta funcion;
-}
 
 template<class T, class U>
-NodoArbolAVL<T, U> *ArbolBinarioAVL<T, U>::findUltimoNodoInsertado(NodoArbolAVL<T, U> *r) {
-    if (r == nullptr) {
-        return nullptr;
+NodoArbolAVL<T, U> *ArbolBinarioAVL<T, U>::findUltimoNodoInsertado(NodoArbolAVL<T, U> *r) {{
+        if (r == nullptr) {
+            return nullptr;
+        }
+
+        if (r->getRight() != nullptr) {
+            return findUltimoNodoInsertado(r->getRight());
+        } else {
+            return r;
+        }
     }
-    while (r->getRight() != nullptr) {
-        r = r->getRight();
-    }
-    return r;
+};
+
+
+template<class T, class U>
+void ArbolBinarioAVL<T, U>::put(T data) {
+    root= put(data, root);
+   ultimoNodoInsertado= root;
+     // ultimo nodo ingresado= al resultado de esta funcion;
 }
 
 
@@ -177,7 +183,9 @@ template<class T, class U>
 NodoArbolAVL<T, U> *ArbolBinarioAVL<T, U>::put(T data, NodoArbolAVL<T, U> *r) {
     //1. Realizar Insercion normal
     if (r == nullptr) {
-        return new NodoArbolAVL<T, U>(data);
+
+      return new NodoArbolAVL<T, U>(data);
+
     }
 
     if (r->getData() == data) {
@@ -220,6 +228,7 @@ NodoArbolAVL<T, U> *ArbolBinarioAVL<T, U>::put(T data, NodoArbolAVL<T, U> *r) {
     }
 
     return r;
+
 }
 
 
@@ -368,7 +377,7 @@ void ArbolBinarioAVL<T, U>::inorder(NodoArbolAVL<T, U> *r) {
     }
 
     inorder(r->getLeft());
-    std::cout << r->getData() << " " << endl;
+    std::cout <<"Producto: " << r->getData() << " stock: " << r->getSumaDatosLista()<< endl;
     inorder(r->getRight());
 }
 

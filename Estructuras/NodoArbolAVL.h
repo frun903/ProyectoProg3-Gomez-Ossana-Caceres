@@ -3,7 +3,7 @@
 using namespace std;
 
 #include <string.h>
-#include "D:\UCC\UNIVERSIDAD 2023\Segundo Semestre\programacion 3-intento2\PROYECTOFINAL\ProyectoProg3-Gomez-Ossana-Caceres\Estructuras\Lista.h"
+#include "Lista.h"
 
 
 template<class T,class U >
@@ -15,7 +15,6 @@ private:
     int height;
     Lista<U> lista; // defino que mi nodo tambien tiene una lista
     int sumaDatoslista;
-
 
 public:
     NodoArbolAVL() {
@@ -73,7 +72,7 @@ public:
 // inserta en la lista como siempre lo ha hacho
     void insertarEnListaConDepo(U elemento,U deposito) {
         lista.insertarUltimoDatYdepo(elemento,deposito);
-        sumaDatoslista=sumaDatoslista+elemento;
+        sumaDatoslista=sumaDatoslista+elemento; // sumo los datos totales de la lista
     }
 
 // funcion para imprimir las listas de cada nodo como siempre
