@@ -107,6 +107,8 @@ int main() {
 
   arbol1.inorder();
 
+  cout<<arbol1.search("CTLANIN-330-75");
+ arbol1.searchAndData("VASSER CYRANO TOALLERO PERCHA 13/1829");
     return 0;
 }
 
