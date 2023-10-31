@@ -20,6 +20,8 @@ public:
 
     bool searchAndData(T Data);
 
+    bool searchAndDataStockDeposito (T data, U deposito);
+
     void remove(T data);
 
     void preorder();
@@ -56,6 +58,7 @@ private:
     bool search(T data, NodoArbolAVL<T, U,V> *r);
     bool searchAndData(T data, NodoArbolAVL<T, U,V> *r);
     bool searchAndRemove(T data, NodoArbolAVL<T, U,V> *r);
+    bool searchAndDataStockDeposito (T data,U deposito, NodoArbolAVL<T, U,V> *r);
     void preorder(NodoArbolAVL<T, U,V> *r);
     void inorder(NodoArbolAVL<T, U,V> *r);
     void postorder(NodoArbolAVL<T, U,V> *r);
@@ -149,6 +152,36 @@ bool ArbolBinarioAVL<T, U, V>::searchAndData(T data, NodoArbolAVL<T, U, V> *r) {
         return searchAndData(data, r->getLeft());
     } else {
         return searchAndData(data, r->getRight());
+    }
+}
+
+
+
+
+
+template<class T, class U, class V>
+bool ArbolBinarioAVL<T, U, V>::searchAndDataStockDeposito(T data, U deposito)  {
+    return searchAndDataStockDeposito(data,deposito, root);
+}
+
+
+template<class T, class U, class V>
+bool ArbolBinarioAVL<T, U, V>::searchAndDataStockDeposito(T data, U deposito, NodoArbolAVL<T, U, V> *r) {
+    if (r == nullptr) {
+        return false;
+        cout<<"no se encontro el producto"<<endl;
+    }
+
+    if (r->getData() == data) {
+        cout<<"Producto: "<<data<<" "<<endl;
+       cout<<"El stock en el deposito "<<deposito<< " es: "<<r->getStockPorDeposito(deposito)<<endl;
+        return true;
+    }
+
+    if (r->getData() > data) {
+        return searchAndDataStockDeposito(data,deposito, r->getLeft());
+    } else {
+        return searchAndDataStockDeposito(data,deposito, r->getRight());
     }
 }
 

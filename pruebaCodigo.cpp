@@ -28,7 +28,6 @@ int main() {
     char delimitadorDeColumn=',';
     int contadordecolumnas;
     int cantidad_Articulos_Diferentes=0;
-
     Archivo.open("Inventariado Fisico.csv");
 
 
@@ -60,7 +59,6 @@ int main() {
         for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
 
 
-
             //0= grupo
             //1= codigo de barras
             //2= articulos
@@ -69,10 +67,12 @@ int main() {
                 cantidad_Articulos_Diferentes++;
                 producto=dato;
                 //cout<<dato<<endl;
-
             }
 
-            if (i>2 && dato!= ""){
+            if (i>2){
+                if(dato == "" || dato == "/n"){
+                    dato= "0";
+                }
                 dato_num= stoi(dato);
                 cantidad_Articulos_Totales=cantidad_Articulos_Totales+dato_num;
                 stock=stock+dato_num;
@@ -107,8 +107,11 @@ int main() {
 
   arbol1.inorder();
 
-  cout<<arbol1.search("CTLANIN-330-75");
- arbol1.searchAndData("VASSER CYRANO TOALLERO PERCHA 13/1829");
+  //cout<<arbol1.search("CTLANIN-330-75");
+// arbol1.searchAndData("VASSER CYRANO TOALLERO PERCHA 13/1829");
+arbol1.searchAndDataStockDeposito("GUIAS FIXSYSTEM  DE 120 CM",1);
+
+
     return 0;
 }
 

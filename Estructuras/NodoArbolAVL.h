@@ -87,7 +87,7 @@ public:
 
 
     int getStockPorDeposito(int n){
-        return lista.getDato(n+1);
+        return lista.getDato(n-1);
     }
 
 /*
