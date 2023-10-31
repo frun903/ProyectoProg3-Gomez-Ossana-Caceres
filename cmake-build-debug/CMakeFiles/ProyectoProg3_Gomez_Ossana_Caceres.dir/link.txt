@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.o CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/pruebaCodigo.cpp.o -o ProyectoProg3_Gomez_Ossana_Caceres 

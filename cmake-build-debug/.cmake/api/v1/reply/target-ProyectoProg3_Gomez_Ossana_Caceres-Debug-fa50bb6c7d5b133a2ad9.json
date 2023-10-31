@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "pruebaCodigo.cpp.exe"
-		},
-		{
-			"path" : "pruebaCodigo.cpp.pdb"
+			"path" : "ProyectoProg3_Gomez_Ossana_Caceres"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 6,
 				"parent" : 0
 			}
 		]
@@ -38,7 +35,10 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++14 -fdiagnostics-color=always"
+					"fragment" : "-g -fdiagnostics-color=always"
+				},
+				{
+					"fragment" : "-std=gnu++14"
 				}
 			],
 			"language" : "CXX",
@@ -52,11 +52,12 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
-	"id" : "pruebaCodigo.cpp::@6890427a1f51a3e7e1df",
+	"id" : "ProyectoProg3_Gomez_Ossana_Caceres::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -68,16 +69,12 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "pruebaCodigo.cpp",
-	"nameOnDisk" : "pruebaCodigo.cpp.exe",
+	"name" : "ProyectoProg3_Gomez_Ossana_Caceres",
+	"nameOnDisk" : "ProyectoProg3_Gomez_Ossana_Caceres",
 	"paths" : 
 	{
 		"build" : ".",
@@ -89,12 +86,19 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
 	"sources" : 
 	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,

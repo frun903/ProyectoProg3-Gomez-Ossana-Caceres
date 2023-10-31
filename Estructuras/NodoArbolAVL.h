@@ -85,6 +85,11 @@ public:
 
     }
 
+
+    int getStockPorDeposito(int n){
+        return lista.getDato(n+1);
+    }
+
 /*
 // inserta en la lista como siempre lo ha hacho
     void insertarEnListaConDepo(U elemento,U deposito) {
