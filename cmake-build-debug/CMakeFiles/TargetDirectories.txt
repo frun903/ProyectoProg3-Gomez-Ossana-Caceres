@@ -1,4 +1,4 @@
-D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir
-D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/CMakeFiles/pruebaCodigo.cpp.dir
-D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir
+/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/CMakeFiles/pruebaCodigo.cpp.dir
+/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/CMakeFiles/rebuild_cache.dir
