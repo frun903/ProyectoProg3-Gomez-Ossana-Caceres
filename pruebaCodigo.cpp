@@ -6,6 +6,12 @@
 #include "Estructuras/ArbolBinarioAVL.h"
 using namespace std;
 
+//Ante la funcionalidad de Argumentos
+void total_art_dif();
+void total_art();
+
+
+
 int main() {
 
     ListaFT<int> depositos;
@@ -33,18 +39,11 @@ int main() {
     {
         std::cout<<"Archivo funciona correactamente"<<std::endl;
     }
-
-
-    /* while (!Archivo.eof()){
-         Archivo.getline(renglon,100);
-         cout<<renglon<<endl;
-     }*/
-
+    
 // vamos a leer la primera linea para saltar el encabezado.
     // y a la vez contamos la cantidad de columnas que vamos a tener.
     getline(Archivo, linea);
     stringstream linea2;
-    // cout<<linea<<endl;
     linea2.str(linea);
 
 
@@ -110,10 +109,6 @@ int main() {
 
     return 0;
 }
-
-
-
-
 
 /*
 #include <iostream>
@@ -296,3 +291,86 @@ int main() {
         return 0;
     }
 */
+
+void total_art_dif(){
+
+
+    //Apertura del archivo.csv
+    ifstream Archivo;
+
+    Archivo.open("Inventariado Fisico.csv");
+
+    if (Archivo.fail())
+    {
+        std::cout<<"Archivo NO  abierto correctamnete" <<std:: endl;
+    }else
+    {
+        std::cout<<"Archivo funciona correactamente"<<std::endl;
+    }
+
+
+    string  linea,dato;
+    char delimitadorDeColumn=',';
+    int cantidad_Articulos_Diferentes=0;
+
+    //Ignoramos la primera linea del .csv
+    getline(Archivo, linea);
+    stringstream linea2;
+    linea2.str(linea);
+
+    while (getline(Archivo, linea)) { // mientras el archivo este abierto o no sea el final.
+        // aca tambien podria decir  while ( !inventario.eof)
+
+        stringstream stream(linea); // Convertir la cadena a un stream
+
+        for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
+
+            if (i == 2) {  //
+                cantidad_Articulos_Diferentes++;
+            }
+        }
+    }
+
+    std::cout<<"Cantidad total de artículos diferentes:"<<cantidad_Articulos_Diferentes;
+
+}
+
+
+
+void total_art() {
+    //Apertura del archivo.csv
+    ifstream Archivo;
+
+    Archivo.open("Inventariado Fisico.csv");
+
+    if (Archivo.fail()) {
+        std::cout << "Archivo NO  abierto correctamnete" << std::endl;
+    } else {
+        std::cout << "Archivo funciona correactamente" << std::endl;
+    }
+
+
+    string linea, dato;
+    char delimitadorDeColumn = ',';
+    int dato_num = 0, cantidad_Articulos_Totales;
+
+
+    while (getline(Archivo, linea)) { // mientras el archivo este abierto o no sea el final.
+        // aca tambien podria decir  while ( !inventario.eof)
+
+        stringstream stream(linea); // Convertir la cadena a un stream
+
+        for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
+            if (i > 2) {
+                if (dato == "" || dato == "\n") {
+                    dato = "0";
+                }
+                dato_num = stoi(dato);
+                cantidad_Articulos_Totales = cantidad_Articulos_Totales + dato_num;
+            }
+        }
+
+    }
+
+    std::cout<<"Cantidad total de artículos: "<< cantidad_Articulos_Totales;
+}
