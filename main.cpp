@@ -22,15 +22,15 @@ int main() {
     int dato_num, cantidadTotalDeArticulosDiferentes=0, cantidadTotalDeArticulos=0;
     int contadordecolumnas=0;
     ArbolBinario<streambuf> arbol1;
-    ArbolBinarioAVL<string,int> arbol2;
+    ArbolBinarioAVL<string,int,> arbol2;
 
 
     // debemos ver como manejar la definicion de los depositos ya que estos son dinamicos.
     // int deposito1, deposito2, deposito3,deposito4 ,deposito5, ;
 
 
-    Lista<string> listaDecolunas;
-    //Lista<string> listaPrueba;
+
+
 
 
 
