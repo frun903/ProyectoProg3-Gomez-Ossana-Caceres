@@ -17,6 +17,8 @@ public:
 
     void putStock(T data,U stock, V lista );
 
+    void putAndRepeated(T data, U stock, V lista);
+
     // funcion para buscar segun producto:
 
     void printByStock(U stock);
@@ -81,7 +83,7 @@ private:
     //nueva funcion
     NodoArbolAVL<T, U, V> *putStock(T data, U stock, V lista, NodoArbolAVL<T, U, V> *r);
     NodoArbolAVL<T, U, V> *insertarEnLista( T data, U elemento, V lista ,NodoArbolAVL<T, U, V> *r);
-
+    NodoArbolAVL<T,U,V> *putAndRepeated(T data, U stock, V lista, NodoArbolAVL<T, U, V> *r);
      void printByStock(U stock, NodoArbolAVL<T, U, V> *r);
     NodoArbolAVL<T, U,V> *remove(T data, NodoArbolAVL<T, U,V> *r);
     NodoArbolAVL<T, U,V> *findMin(NodoArbolAVL<T, U,V> *r);
@@ -251,6 +253,7 @@ NodoArbolAVL<T, U,V> *ArbolBinarioAVL<T, U, V>::findUltimoNodoInsertado(NodoArbo
     }
 };
 
+
 template<class T, class U, class V>
 void ArbolBinarioAVL<T, U, V>::put(T data, U stock, V lista) {
     root = put(data, stock, lista, root);
@@ -310,7 +313,73 @@ NodoArbolAVL<T, U, V> *ArbolBinarioAVL<T, U, V>::put(T data, U stock, V lista, N
     return r;
 }
 
-/*
+
+
+template<class T, class U, class V>
+void ArbolBinarioAVL<T, U, V>::putAndRepeated(T data, U stock, V lista) {
+   root= putAndRepeated(data,stock,lista,root);
+
+}
+
+//Metodo Put Con Insercion con valores repetidos
+
+
+template<class T, class U, class V>
+NodoArbolAVL<T, U, V> *ArbolBinarioAVL<T, U, V>::putAndRepeated(T data, U stock, V lista, NodoArbolAVL<T, U, V> *r) {
+    // Realizar la inserción normal
+    if (r == nullptr) {
+        return new NodoArbolAVL<T, U, V>(data, stock, lista);
+    }
+
+
+    //Insercion Valores Repetidos
+    if (r->getStock() == stock) {
+        r->setIn(put(data, stock, lista, r->getIn()));
+    }
+
+    if (r->getStock() > stock) {
+        r->setLeft(put(data, stock, lista, r->getLeft()));
+    } else {
+        r->setRight(put(data, stock, lista, r->getRight()));
+    }
+
+    // Actualizar la altura de este nodo padre
+    r->setHeight(max(calculateHeight(r->getLeft()), calculateHeight(r->getRight())) + 1);
+
+    // Obtener el factor de balance de este nodo padre
+    // y chequear si este nodo se desbalanceó
+    int balance = getBalance(r);
+
+    //Quedo desbalanceado II: corresponde una rot Der
+    if (balance > 1 && data < r->getLeft()->getData())
+    {
+        return rotacionDerecha(r);
+    }
+
+    //Quedo desbalanceado ID: corresponde una rot Izq Der
+    if (balance > 1 && data > r->getLeft()->getData())
+    {
+        r->setLeft(rotacionIzquierda(r->getLeft()));
+        return rotacionDerecha(r);
+    }
+
+    //Quedo desbalanceado DD: corresponde una rot Izq
+    if (balance < -1 && data > r->getRight()->getData())
+    {
+        return rotacionIzquierda(r);
+    }
+
+    //Quedo desbalanceado DI: corresponde una rot Der Izq
+    if (balance < -1 && data < r->getRight()->getData())
+    {
+        r->setRight(rotacionDerecha(r->getRight()));
+        return rotacionIzquierda(r);
+    }
+
+    return r;
+}
+
+
 template<class T, class U, class V>
 void ArbolBinarioAVL<T, U, V>::putStock(T data, U stock, V lista) {
     root = putStock(data, stock, lista, root);
@@ -328,15 +397,10 @@ NodoArbolAVL<T, U, V> *ArbolBinarioAVL<T, U, V>::putStock(T data, U stock, V lis
     } else if (r->getStock()<stock) {
         r->setRight(putStock(data, stock, lista, r->getRight()));
     } else {
-        // Si el stock es igual, compara por el nombre
-        if ( r->getData()>data) {
-            r->setLeft(putStock(data, stock, lista, r->getLeft()));
-        } else if (r->getData()<data) {
-            r->setRight(putStock(data, stock, lista, r->getRight()));
-        } else {
-            throw 200;
-        }
+        r->setIn(putStock(data,stock,lista,r->getIn()));
     }
+
+
     r->setHeight(max(calculateHeight(r->getLeft()), calculateHeight(r->getRight())) + 1);
 
     // Obtener el factor de balance de este nodo padre
@@ -367,7 +431,7 @@ NodoArbolAVL<T, U, V> *ArbolBinarioAVL<T, U, V>::putStock(T data, U stock, V lis
 
     return r;
 }
-*/
+
 
 template<class T, class U, class V>
 void ArbolBinarioAVL<T, U, V>::printByStock(U stock) {
@@ -551,9 +615,11 @@ void ArbolBinarioAVL<T, U, V>::inorder(NodoArbolAVL<T, U,V> *r) {
     }
 
     inorder(r->getLeft());
-    std::cout <<"Producto: " << r->getData() <<endl;
+    std::cout <<"Producto: " << r->getData() <<"\n El stock es: "<<r->getStock()<<endl;
 
-    r->getdepositos();
+    //r->getdepositos();
+
+    inorder(r->getIn());
     inorder(r->getRight());
 }
 

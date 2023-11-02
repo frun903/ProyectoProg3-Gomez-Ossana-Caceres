@@ -105,6 +105,50 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="Limpio">
+				<Option output="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Limpio" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 Limpio"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Limpio/fast">
+				<Option output="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Limpio" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 Limpio/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option type="4"/>
@@ -126,6 +170,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/Limpio/Limpio.cpp">
+			<Option target="Limpio"/>
+		</Unit>
 		<Unit filename="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/main.cpp">
 			<Option target="ProyectoProg3_Gomez_Ossana_Caceres"/>
 		</Unit>

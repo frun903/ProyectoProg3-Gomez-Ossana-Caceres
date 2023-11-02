@@ -142,6 +142,43 @@ pruebaCodigo.cpp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pruebaCodigo.cpp.dir/build.make CMakeFiles/pruebaCodigo.cpp.dir/build
 .PHONY : pruebaCodigo.cpp/fast
 
+#=============================================================================
+# Target rules for targets named Limpio
+
+# Build rule for target.
+Limpio: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Limpio
+.PHONY : Limpio
+
+# fast build rule for target.
+Limpio/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Limpio.dir/build.make CMakeFiles/Limpio.dir/build
+.PHONY : Limpio/fast
+
+Limpio/Limpio.o: Limpio/Limpio.cpp.o
+.PHONY : Limpio/Limpio.o
+
+# target to build an object file
+Limpio/Limpio.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Limpio.dir/build.make CMakeFiles/Limpio.dir/Limpio/Limpio.cpp.o
+.PHONY : Limpio/Limpio.cpp.o
+
+Limpio/Limpio.i: Limpio/Limpio.cpp.i
+.PHONY : Limpio/Limpio.i
+
+# target to preprocess a source file
+Limpio/Limpio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Limpio.dir/build.make CMakeFiles/Limpio.dir/Limpio/Limpio.cpp.i
+.PHONY : Limpio/Limpio.cpp.i
+
+Limpio/Limpio.s: Limpio/Limpio.cpp.s
+.PHONY : Limpio/Limpio.s
+
+# target to generate assembly for a file
+Limpio/Limpio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Limpio.dir/build.make CMakeFiles/Limpio.dir/Limpio/Limpio.cpp.s
+.PHONY : Limpio/Limpio.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -201,8 +238,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Limpio"
 	@echo "... ProyectoProg3_Gomez_Ossana_Caceres"
 	@echo "... pruebaCodigo.cpp"
+	@echo "... Limpio/Limpio.o"
+	@echo "... Limpio/Limpio.i"
+	@echo "... Limpio/Limpio.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

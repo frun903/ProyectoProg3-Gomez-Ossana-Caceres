@@ -10,7 +10,7 @@ template<class T,class U,class V >
 class NodoArbolAVL {
 private:
     T data;
-    NodoArbolAVL *left, *right;
+    NodoArbolAVL *left, *right, *in;
     int height;
     // defino que mi nodo tambien tiene una lista
     ListaFT<int> lista; // lista es depositos en el codigo de fran.
@@ -24,6 +24,7 @@ public:
         data = d;
         left = nullptr;
         right = nullptr;
+        in= nullptr;
         height = 1;
         //sumaDatoslista=0;
         stock=s;
@@ -49,6 +50,15 @@ public:
         this->right = r;
     }
 
+
+    NodoArbolAVL *getIn()  {
+        return in;
+    }
+
+    void setIn(NodoArbolAVL *i) {
+        this->in = i;
+    }
+
     NodoArbolAVL *getLeft() {
         return left;
     }
@@ -72,6 +82,10 @@ public:
 */
     int getStock(){
         return stock;
+    }
+
+    void setStock(int s){
+        this->stock=s;
     }
 
     void setSdepositos(ListaFT<int> listaFt){

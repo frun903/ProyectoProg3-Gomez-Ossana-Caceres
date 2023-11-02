@@ -20,7 +20,7 @@ int main() {
     int stock=0;
     string producto;
     int cantidad_Articulos_Totales=0;
-      ArbolBinarioAVL<string,int,ListaFT<int>> arbol1;
+    ArbolBinarioAVL<string,int,ListaFT<int>> arbol1;
     ArbolBinarioAVL<string ,int,ListaFT<int>> arbolStock;
     //Crea conexion a mi archivo de texto
     ifstream Archivo;
@@ -84,31 +84,22 @@ int main() {
 
        // arbolStock.putStock(producto,stock,depositos);
         //A este punto las variables ya deberian estar lista para ir a la estrucutra
-       arbol1.put(producto,stock,depositos);
+       //arbol1.put(producto,stock,depositos);
+       arbol1.putStock(producto,stock,depositos);
        //arbolStock.insertarEnLista(producto,stock,depositos);
         //depositos.print();
-
-
-
-
         //Aqui el Stock de c/d producto vuelve a cero, ya que esta variable auxilar corresponde solo a un producto
         stock=0;
         //Vacio esta lista auxiar para poder volver a usarla con el nodo
         depositos.vaciar();
     }
 
-/*
-    while (!Encola.esVacia()){
-        Encola.desencolar();
-    }
-*/
     cout<<std::endl;
     cout<<std::endl;
     cout<<"La cantidad de articulos diferentes es "<<cantidad_Articulos_Diferentes<<endl;
     cout<<"La cantidad de Articulos totales es "<<cantidad_Articulos_Totales<<endl;
 
- // arbol1.inorder();
-
+ arbol1.inorder();
   //cout<<arbol1.search("CTLANIN-330-75");
 // arbol1.searchAndData("VASSER CYRANO TOALLERO PERCHA 13/1829");
 //arbol1.searchAndDataStockDeposito("GUIAS FIXSYSTEM  DE 120 CM",1);
@@ -121,7 +112,7 @@ cout<<"    "<<endl;
 //arbol1.preorder();
 //arbolStock.inorder2();
 //arbolStock.print();
- //   arbolStock.printByStock(16);
+ //arbolStock.printByStock(16);
 
 
     return 0;
