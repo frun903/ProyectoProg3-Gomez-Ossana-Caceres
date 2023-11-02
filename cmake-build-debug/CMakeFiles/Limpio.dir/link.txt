@@ -1,1 +1,3 @@
-/usr/bin/c++ -g CMakeFiles/Limpio.dir/Limpio/Limpio.cpp.o -o Limpio 
+"C:\Program Files\JetBrains\CLion 2023.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Limpio.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\Limpio.dir/objects.a @CMakeFiles\Limpio.dir\objects1.rsp
+C:\MinGW\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Limpio.dir/objects.a -Wl,--no-whole-archive -o Limpio.exe -Wl,--out-implib,libLimpio.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Limpio.dir\linkLibs.rsp

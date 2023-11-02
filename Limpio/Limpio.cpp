@@ -2,14 +2,13 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include "EstructurasLimpio//ListaFT.h"
-#include "EstructurasLimpio//ArbolBinarioAVL.h"
+#include "EstructurasLimpio/ListaFT.h"
+#include "EstructurasLimpio/ArbolBinarioAVL.h"
+
 using namespace std;
 
 
-
-
-void total_art_dif(){
+void total_art_dif() {
 
 
     //Apertura del archivo.csv
@@ -17,18 +16,16 @@ void total_art_dif(){
 
     Archivo.open("Inventariado Fisico.csv");
 
-    if (Archivo.fail())
-    {
-        std::cout<<"Archivo NO  abierto correctamnete" <<std:: endl;
-    }else
-    {
-        std::cout<<"Archivo funciona correactamente"<<std::endl;
+    if (Archivo.fail()) {
+        std::cout << "Archivo NO  abierto correctamnete" << std::endl;
+    } else {
+        std::cout << "Archivo funciona correactamente" << std::endl;
     }
 
 
-    string  linea,dato;
-    char delimitadorDeColumn=',';
-    int cantidad_Articulos_Diferentes=0;
+    string linea, dato;
+    char delimitadorDeColumn = ',';
+    int cantidad_Articulos_Diferentes = 0;
 
     //Ignoramos la primera linea del .csv
     getline(Archivo, linea);
@@ -48,10 +45,9 @@ void total_art_dif(){
         }
     }
 
-    std::cout<<"Cantidad total de artículos diferentes:"<<cantidad_Articulos_Diferentes;
+    std::cout << "Cantidad total de artículos diferentes:" << cantidad_Articulos_Diferentes;
 
 }
-
 
 
 void total_art() {
@@ -62,14 +58,12 @@ void total_art() {
     int dato_num = 0, cantidad_Articulos_Totales;
 
 
-
     Archivo.open("Inventariado Fisico.csv");
     if (Archivo.fail()) {
         std::cout << "Archivo NO  abierto correctamnete" << std::endl;
     } else {
         std::cout << "Archivo funciona correactamente" << std::endl;
     }
-
 
 
     while (getline(Archivo, linea)) { // mientras el archivo este abierto o no sea el final.
@@ -89,47 +83,363 @@ void total_art() {
 
     }
 
-    std::cout<<"Cantidad total de artículos: "<< cantidad_Articulos_Totales;
+    std::cout << "Cantidad total de artículos: " << cantidad_Articulos_Totales;
 }
 
 
+void minStock(int n) {
 
 
+    int dato_num, stock = 0;
+    string producto;
+    string inventario, linea, dato;
+    char delimitadorDeColumn = ',';
 
+
+    ArbolBinarioAVL<string, int, ListaFT<int>> arbolStock;
+    ListaFT<int> depositos;
+
+
+    //Crea conexion a mi archivo de texto
+    ifstream Archivo;
+    Archivo.open("Inventariado Fisico.csv");
+    if (Archivo.fail()) {
+        std::cout << "Archivo NO  abierto correctamnete" << std::endl;
+    } else {
+        std::cout << "Archivo funciona correactamente" << std::endl;
+    }
+
+// vamos a leer la primera linea para saltar el encabezado.
+    // y a la vez contamos la cantidad de columnas que vamos a tener.
+    getline(Archivo, linea);
+
+
+    while (getline(Archivo, linea)) { // mientras el archivo este abierto o no sea el final.
+        // aca tambien podria decir  while ( !inventario.eof)
+
+        stringstream stream(linea); // Convertir la cadena a un stream
+
+        // con este for, hago que los elementos que estan en la columna 1 me los meta en un arbol
+        // podria hacer que me meta lo de otra columna en algun otra estructura.
+        for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
+
+            if (i == 2) {  //
+                producto = dato;
+            }
+            if (i > 2) {
+                if (dato == "" || dato == "/n") {
+                    dato = "0";
+                }
+                dato_num = stoi(dato);
+                stock = stock + dato_num;
+                depositos.insertarUltimo(dato_num, i - 2);// Este es para la lista modificada
+            }
+        }
+
+        arbolStock.putStock(producto, stock, depositos);
+
+        //Aqui el Stock de c/d producto vuelve a cero, ya que esta variable auxilar corresponde solo a un producto
+        stock = 0;
+        //Vacio esta lista auxiar para poder volver a usarla con el nodo
+        depositos.vaciar();
+    }
+
+    arbolStock.searchMinStock(n);
+}
+
+
+void minStock2(int n, int NumDepo) {
+
+
+    int dato_num, stock = 0, depo;
+    string producto;
+    string inventario, linea, dato;
+    char delimitadorDeColumn = ',';
+
+
+    ArbolBinarioAVL<string, int, ListaFT<int>> arbolStock;
+    ListaFT<int> depositos;
+
+
+    //Crea conexion a mi archivo de texto
+    ifstream Archivo;
+    Archivo.open("Inventariado Fisico.csv");
+    if (Archivo.fail()) {
+        std::cout << "Archivo NO  abierto correctamnete" << std::endl;
+    } else {
+        std::cout << "Archivo funciona correactamente" << std::endl;
+    }
+
+// vamos a leer la primera linea para saltar el encabezado.
+    // y a la vez contamos la cantidad de columnas que vamos a tener.
+    getline(Archivo, linea);
+
+
+    while (getline(Archivo, linea)) { // mientras el archivo este abierto o no sea el final.
+        // aca tambien podria decir  while ( !inventario.eof)
+
+        stringstream stream(linea); // Convertir la cadena a un stream
+
+        // con este for, hago que los elementos que estan en la columna 1 me los meta en un arbol
+        // podria hacer que me meta lo de otra columna en algun otra estructura.
+        for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
+
+            if (i == 2) {  //
+                producto = dato;
+            }
+            if (i > 2) {
+                if (dato == "" || dato == "/n") {
+                    dato = "0";
+                }
+                dato_num = stoi(dato);
+                depo = (i - 2);
+                if (depo== NumDepo){
+                    stock=dato_num;
+                depositos.insertarUltimo(dato_num, i - 2);// Este es para la lista modificada
+            }
+            }
+        }
+            arbolStock.putStock(producto, stock, depositos);
+
+        //Aqui el Stock de c/d producto vuelve a cero, ya que esta variable auxilar corresponde solo a un producto
+        stock = 0;
+        //Vacio esta lista auxiar para poder volver a usarla con el nodo
+        depositos.vaciar();
+    }
+
+    arbolStock.searchMinStock(n);
+}
+
+
+void stock(string nombreArticulo) {
+
+    int dato_num, stock = 0;
+    string producto;
+    string inventario, linea, dato;
+    char delimitadorDeColumn = ',';
+
+
+    ArbolBinarioAVL<string, int, ListaFT<int>> arbol1;
+    ListaFT<int> depositos;
+
+
+    //Crea conexion a mi archivo de texto
+    ifstream Archivo;
+    Archivo.open("Inventariado Fisico.csv");
+    if (Archivo.fail()) {
+        std::cout << "Archivo NO  abierto correctamnete" << std::endl;
+    } else {
+        std::cout << "Archivo funciona correactamente" << std::endl;
+    }
+
+// vamos a leer la primera linea para saltar el encabezado.
+    // y a la vez contamos la cantidad de columnas que vamos a tener.
+    getline(Archivo, linea);
+
+
+    while (getline(Archivo, linea)) { // mientras el archivo este abierto o no sea el final.
+        // aca tambien podria decir  while ( !inventario.eof)
+
+        stringstream stream(linea); // Convertir la cadena a un stream
+
+        // con este for, hago que los elementos que estan en la columna 1 me los meta en un arbol
+        // podria hacer que me meta lo de otra columna en algun otra estructura.
+        for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
+
+            if (i == 2) {  //
+                producto = dato;
+            }
+            if (i > 2) {
+                if (dato == "" || dato == "/n") {
+                    dato = "0";
+                }
+                dato_num = stoi(dato);
+                stock = stock + dato_num;
+                depositos.insertarUltimo(dato_num, i - 2);// Este es para la lista modificada
+            }
+        }
+
+        arbol1.put(producto, stock, depositos);
+
+        //Aqui el Stock de c/d producto vuelve a cero, ya que esta variable auxilar corresponde solo a un producto
+        stock = 0;
+        //Vacio esta lista auxiar para poder volver a usarla con el nodo
+        depositos.vaciar();
+    }
+
+    arbol1.searchAndData(nombreArticulo);
+}
+
+
+void stock2(string nombreArticulo, int deposito) {
+
+    int dato_num, stock = 0;;
+    string producto;
+    string inventario, linea, dato;
+    char delimitadorDeColumn = ',';
+
+
+    ArbolBinarioAVL<string, int, ListaFT<int>> arbol1;
+    ListaFT<int> depositos;
+
+
+    //Crea conexion a mi archivo de texto
+    ifstream Archivo;
+    Archivo.open("Inventariado Fisico.csv");
+    if (Archivo.fail()) {
+        std::cout << "Archivo NO  abierto correctamnete" << std::endl;
+    } else {
+        std::cout << "Archivo funciona correactamente" << std::endl;
+    }
+
+    // vamos a leer la primera linea para saltar el encabezado.
+    // y a la vez contamos la cantidad de columnas que vamos a tener.
+    getline(Archivo, linea);
+    while (getline(Archivo, linea)) { // mientras el archivo este abierto o no sea el final.
+        // aca tambien podria decir  while ( !inventario.eof)
+
+        stringstream stream(linea); // Convertir la cadena a un stream
+
+        // con este for, hago que los elementos que estan en la columna 1 me los meta en un arbol
+        // podria hacer que me meta lo de otra columna en algun otra estructura.
+        for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
+
+            if (i == 2) {  //
+                producto = dato;
+            }
+            if (i > 2) {
+                if (dato == "" || dato == "/n") {
+                    dato = "0";
+                }
+                dato_num = stoi(dato);
+                stock = stock + dato_num;
+                depositos.insertarUltimo(dato_num, i - 2);// Este es para la lista modificada
+            }
+        }
+
+        arbol1.put(producto, stock, depositos);
+        //Aqui el Stock de c/d producto vuelve a cero, ya que esta variable auxilar corresponde solo a un producto
+        stock = 0;
+        //Vacio esta lista auxiar para poder volver a usarla con el nodo
+        depositos.vaciar();
+    }
+
+    arbol1.searchAndDataStockDeposito(nombreArticulo, deposito);
+}
+
+
+void maxStock(int n) {
+
+
+    int dato_num, stock = 0;
+    string producto;
+    string inventario, linea, dato;
+    char delimitadorDeColumn = ',';
+
+
+    ArbolBinarioAVL<string, int, ListaFT<int>> arbolStock;
+    ListaFT<int> depositos;
+
+
+    //Crea conexion a mi archivo de texto
+    ifstream Archivo;
+    Archivo.open("Inventariado Fisico.csv");
+    if (Archivo.fail()) {
+        std::cout << "Archivo NO  abierto correctamnete" << std::endl;
+    } else {
+        std::cout << "Archivo funciona correactamente" << std::endl;
+    }
+
+// vamos a leer la primera linea para saltar el encabezado.
+    // y a la vez contamos la cantidad de columnas que vamos a tener.
+    getline(Archivo, linea);
+
+
+    while (getline(Archivo, linea)) { // mientras el archivo este abierto o no sea el final.
+        // aca tambien podria decir  while ( !inventario.eof)
+
+        stringstream stream(linea); // Convertir la cadena a un stream
+
+        // con este for, hago que los elementos que estan en la columna 1 me los meta en un arbol
+        // podria hacer que me meta lo de otra columna en algun otra estructura.
+        for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
+
+            if (i == 2) {  //
+                producto = dato;
+            }
+            if (i > 2) {
+                if (dato == "" || dato == "/n") {
+                    dato = "0";
+                }
+                dato_num = stoi(dato);
+                stock = stock + dato_num;
+                depositos.insertarUltimo(dato_num, i - 2);// Este es para la lista modificada
+            }
+        }
+
+        arbolStock.putStock(producto, stock, depositos);
+
+        //Aqui el Stock de c/d producto vuelve a cero, ya que esta variable auxilar corresponde solo a un producto
+        stock = 0;
+        //Vacio esta lista auxiar para poder volver a usarla con el nodo
+        depositos.vaciar();
+    }
+
+    arbolStock.searchMaxStock(n);
+}
 
 
 int main() {
 
-
-int opcion;
-    char delimitadorDeColumn=',';
+    int opcion;
+    char delimitadorDeColumn = ',';
+    string nomArticulo;
+    int deposito, n = 0;
     cout << "Elije una opción (1-7): ";
     cin >> opcion;
 
     switch (opcion) {
         case 1:
-            funcion1();
+            total_art_dif();
             break;
         case 2:
-            funcion2();
+            total_art();
             break;
         case 3:
-            funcion3();
+            cout << "ingrese el valor de stok para obtener los productos con menos igual o menor cantidad" << endl;
+            cin >> n;
+            minStock(n);
             break;
         case 4:
-            funcion4();
+            cout << "ingrese el valor de stok para obtener los productos con menos igual o menor cantidad" << endl;
+            cin >> n;
+            cout << "ingrese el deposito al revisar" << endl;
+            cin >> deposito;
+            minStock2(n, deposito);
+
+
             break;
         case 5:
-            funcion5();
+            cout << "ingrese el nombre del articulo" << endl;
+            cin.ignore();
+            getline(cin, nomArticulo);
+            stock(nomArticulo);
             break;
         case 6:
-            funcion6();
+            cout << "ingrese el nombre del articulo" << endl;
+            cin.ignore();
+            getline(cin, nomArticulo);
+            cout << "ingrese el deposito:" << endl;
+            cin >> deposito;
+            stock2(nomArticulo, deposito);
             break;
         case 7:
-            funcion7();
+            cout << "ingrese el valor de stok para obtener los productos con mayor o igual cantidad" << endl;
+            cin >> n;
+            maxStock(n);
             break;
         default:
-            funcionError();
+            //     funcionError();
             break;
     }
 
@@ -144,7 +454,7 @@ int opcion;
 */
 
 
-    //cout<<arbol1.search("CTLANIN-330-75");
+//cout<<arbol1.search("CTLANIN-330-75");
 // arbol1.searchAndData("VASSER CYRANO TOALLERO PERCHA 13/1829");
 
 
@@ -155,7 +465,7 @@ int opcion;
 //arbol1.preorder();
 //arbolStock.inorder2();
 //arbolStock.print();
-    //   arbolStock.printByStock(16);
+//   arbolStock.printByStock(16);
 
 
 
@@ -340,48 +650,4 @@ int main() {
         return 0;
     }
 */
-
-void total_art_dif(){
-
-
-    //Apertura del archivo.csv
-    ifstream Archivo;
-
-    Archivo.open("Inventariado Fisico.csv");
-
-    if (Archivo.fail())
-    {
-        std::cout<<"Archivo NO  abierto correctamnete" <<std:: endl;
-    }else
-    {
-        std::cout<<"Archivo funciona correactamente"<<std::endl;
-    }
-
-
-    string  linea,dato;
-    char delimitadorDeColumn=',';
-    int cantidad_Articulos_Diferentes=0;
-
-    //Ignoramos la primera linea del .csv
-    getline(Archivo, linea);
-    stringstream linea2;
-    linea2.str(linea);
-
-    while (getline(Archivo, linea)) { // mientras el archivo este abierto o no sea el final.
-        // aca tambien podria decir  while ( !inventario.eof)
-
-        stringstream stream(linea); // Convertir la cadena a un stream
-
-        for (int i = 0; getline(stream, dato, delimitadorDeColumn); i++) {
-
-            if (i == 2) {  //
-                cantidad_Articulos_Diferentes++;
-            }
-        }
-    }
-
-    std::cout<<"Cantidad total de artículos diferentes:"<<cantidad_Articulos_Diferentes;
-
-}
-
 

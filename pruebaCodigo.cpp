@@ -100,11 +100,15 @@ int main() {
     cout<<"La cantidad de Articulos totales es "<<cantidad_Articulos_Totales<<endl;
 
  arbol1.inorder();
+
+
   //cout<<arbol1.search("CTLANIN-330-75");
 // arbol1.searchAndData("VASSER CYRANO TOALLERO PERCHA 13/1829");
 //arbol1.searchAndDataStockDeposito("GUIAS FIXSYSTEM  DE 120 CM",1);
 cout<<"    "<<endl;
-
+ arbol1.searchMinStock(3); // este funciona;
+ cout<<" "<<endl;
+ arbol1.searchMaxStock(3);
 
 // esta funcion deberia imprimir todos los productos que se encuentren en el mismo stock
 // es decir que tengo un arbol ordenado por stock y busca todos los nodos con este criterio.

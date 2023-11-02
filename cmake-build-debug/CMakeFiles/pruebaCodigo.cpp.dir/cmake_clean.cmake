@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.o"
-  "CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.o.d"
-  "pruebaCodigo.cpp"
+  "CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.obj"
+  "CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.obj.d"
+  "libpruebaCodigo.cpp.dll.a"
+  "pruebaCodigo.cpp.exe"
+  "pruebaCodigo.cpp.exe.manifest"
   "pruebaCodigo.cpp.pdb"
 )
 

@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Limpio.dir/Limpio/Limpio.cpp.o"
-  "CMakeFiles/Limpio.dir/Limpio/Limpio.cpp.o.d"
-  "Limpio"
+  "CMakeFiles/Limpio.dir/Limpio/Limpio.cpp.obj"
+  "CMakeFiles/Limpio.dir/Limpio/Limpio.cpp.obj.d"
+  "Limpio.exe"
+  "Limpio.exe.manifest"
   "Limpio.pdb"
+  "libLimpio.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

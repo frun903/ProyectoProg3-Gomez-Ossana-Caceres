@@ -1,6 +1,6 @@
 #ifndef U02_LISTAS_LISTA_LISTA_H_
 #define U02_LISTAS_LISTA_LISTA_H_
-#include "../FTC/Lista Depositos/nodo.h"
+#include "nodo.h"
 #include <iostream>
 /**
  * Clase que implementa una ListaFT Enlasada generica, ya que puede

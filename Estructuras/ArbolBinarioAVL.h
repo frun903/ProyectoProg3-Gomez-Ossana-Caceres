@@ -33,6 +33,9 @@ public:
 
     bool searchAndDataStockDeposito (T data, U deposito);
 
+    void searchMinStock(U n);
+    void searchMaxStock(U n);
+
     void remove(T data);
 
     void preorder();
@@ -82,6 +85,8 @@ private:
     NodoArbolAVL<T, U, V> *put(T data, U stock, V lista, NodoArbolAVL<T, U, V> *r);
     //nueva funcion
     NodoArbolAVL<T, U, V> *putStock(T data, U stock, V lista, NodoArbolAVL<T, U, V> *r);
+    void searchMinStock(NodoArbolAVL<T, U, V> *r, U n);
+    void searchMaxStock(NodoArbolAVL<T, U, V> *r, U n);
     NodoArbolAVL<T, U, V> *insertarEnLista( T data, U elemento, V lista ,NodoArbolAVL<T, U, V> *r);
     NodoArbolAVL<T,U,V> *putAndRepeated(T data, U stock, V lista, NodoArbolAVL<T, U, V> *r);
      void printByStock(U stock, NodoArbolAVL<T, U, V> *r);
@@ -432,6 +437,106 @@ NodoArbolAVL<T, U, V> *ArbolBinarioAVL<T, U, V>::putStock(T data, U stock, V lis
     return r;
 }
 
+/*
+template<class T, class U, class V>
+void ArbolBinarioAVL<T, U, V>::searchMinStock(NodoArbolAVL<T, U, V> *r, U n) {
+    if (r == nullptr) {
+        return;
+    }
+
+    // Primero, recorre el subárbol izquierdo
+    searchMinStock(r->getLeft(), n);
+
+    // Comprueba si el stock de este nodo es menor o igual a n
+    if (r->getStock() <= n) {
+        // Imprime la información del nodo
+        std::cout << "Data: " << r->getData() << ", Stock: " << r->getStock() << std::endl;
+    }
+
+    // Luego, recorre el subárbol del nodo "in"
+    searchMinStock(r->getIn(), n);
+
+    // Finalmente, recorre el subárbol derecho
+    searchMinStock(r->getRight(), n);
+}
+
+// Función pública para buscar nodos con stock menor o igual a n
+template<class T, class U, class V>
+void ArbolBinarioAVL<T, U, V>::searchMinStock(U n) {
+    searchMinStock(root, n);
+}
+*/
+
+template<class T, class U, class V>
+void ArbolBinarioAVL<T, U, V>::searchMinStock(U n) {
+    searchMinStock(root, n);
+}
+
+template<class T, class U, class V>
+void ArbolBinarioAVL<T, U, V>::searchMinStock(NodoArbolAVL<T, U, V>* r, U n) {
+    if (r == nullptr) {
+        return;
+    }
+
+    // Explorar los nodos en el subárbol izquierdo
+    searchMinStock(r->getLeft(), n);
+
+
+    if(r->getStock() <= n) {
+        // Si el stock del nodo actual es menor o igual a n, imprimirlo
+        std::cout << "Data: " << r->getData() << ", Stock: " << r->getStock() << std::endl;
+    }
+
+    // Explorar los nodos en 'in' que cumplen la condición
+    if (r->getStock() <= n) {
+        searchMinStock(r->getIn(), n);
+    }
+
+    // Explorar los nodos en el subárbol derecho solo si es necesario
+    if (r->getStock() <= n) {
+        searchMinStock(r->getRight(), n);
+    }
+}
+
+
+
+template<class T, class U, class V>
+void ArbolBinarioAVL<T, U, V>::searchMaxStock(U n) {
+    searchMaxStock(root, n);
+}
+
+template<class T, class U, class V>
+void ArbolBinarioAVL<T, U, V>::searchMaxStock(NodoArbolAVL<T, U, V>* r, U n) {
+    if (r == nullptr) {
+        return;
+    }
+
+    // Explorar los nodos en el subárbol derecho
+    searchMaxStock(r->getRight(), n);
+
+    if (r->getStock() >= n) {
+        // Si el stock del nodo actual es mayor o igual a n, imprimirlo
+        std::cout << "Data: " << r->getData() << ", Stock: " << r->getStock() << std::endl;
+    }
+
+    // Explorar los nodos en 'in' que cumplen la condición
+    if (r->getStock() >= n) {
+        searchMaxStock(r->getIn(), n);
+    }
+
+    // Explorar los nodos en el subárbol izquierdo solo si es necesario
+    if (r->getStock() >= n) {
+        searchMaxStock(r->getLeft(), n);
+    }
+}
+
+
+
+
+
+
+
+
 
 template<class T, class U, class V>
 void ArbolBinarioAVL<T, U, V>::printByStock(U stock) {
@@ -462,6 +567,11 @@ void ArbolBinarioAVL<T, U, V>::printByStock(U stock, NodoArbolAVL<T, U, V> *r) {
         printByStock( stock, r->getRight());
     }
 }
+
+
+
+
+
 
 
 

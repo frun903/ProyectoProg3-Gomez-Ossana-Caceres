@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.24.2"
@@ -43,21 +43,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Limpio::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Limpio-Debug-d25198e1cb7283aed490.json",
+					"jsonFile" : "target-Limpio-Debug-2a784622a954401c3636.json",
 					"name" : "Limpio",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ProyectoProg3_Gomez_Ossana_Caceres::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ProyectoProg3_Gomez_Ossana_Caceres-Debug-fa50bb6c7d5b133a2ad9.json",
+					"jsonFile" : "target-ProyectoProg3_Gomez_Ossana_Caceres-Debug-273b8013a767ddf86f43.json",
 					"name" : "ProyectoProg3_Gomez_Ossana_Caceres",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "pruebaCodigo.cpp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-pruebaCodigo.cpp-Debug-081180cecd16bf981717.json",
+					"jsonFile" : "target-pruebaCodigo.cpp-Debug-7806ceb8238adabd09ae.json",
 					"name" : "pruebaCodigo.cpp",
 					"projectIndex" : 0
 				}
@@ -67,12 +67,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug",
-		"source" : "/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres"
+		"build" : "D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug",
+		"source" : "D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 5
 	}
 }
