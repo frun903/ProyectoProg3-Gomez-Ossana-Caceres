@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/pruebaCodigo.cpp" "CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.obj" "gcc" "CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.obj.d"
+  "/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/pruebaCodigo.cpp" "CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.o" "gcc" "CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

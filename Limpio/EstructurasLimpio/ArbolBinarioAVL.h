@@ -402,6 +402,9 @@ NodoArbolAVL<T, U, V> *ArbolBinarioAVL<T, U, V>::putStock(T data, U stock, V lis
     } else if (r->getStock()<stock) {
         r->setRight(putStock(data, stock, lista, r->getRight()));
     } else {
+        //En el caso de que Stock sea igual al de algun otro producto
+        //es decir tal producto tiene el mismo Stock que otro
+        // se ingresa en esta rama del medio. 
         r->setIn(putStock(data,stock,lista,r->getIn()));
     }
 

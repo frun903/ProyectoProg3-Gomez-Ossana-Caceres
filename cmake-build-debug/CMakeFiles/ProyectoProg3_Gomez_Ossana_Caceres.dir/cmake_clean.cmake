@@ -1,12 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj"
-  "CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.obj.d"
-  "CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/pruebaCodigo.cpp.obj"
-  "CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/pruebaCodigo.cpp.obj.d"
-  "ProyectoProg3_Gomez_Ossana_Caceres.exe"
-  "ProyectoProg3_Gomez_Ossana_Caceres.exe.manifest"
+  "CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.o"
+  "CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.o.d"
+  "CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/pruebaCodigo.cpp.o"
+  "CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/pruebaCodigo.cpp.o.d"
+  "ProyectoProg3_Gomez_Ossana_Caceres"
   "ProyectoProg3_Gomez_Ossana_Caceres.pdb"
-  "libProyectoProg3_Gomez_Ossana_Caceres.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -8,173 +8,179 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ProyectoProg3_Gomez_Ossana_Caceres">
-				<Option output="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/ProyectoProg3_Gomez_Ossana_Caceres.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option output="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/ProyectoProg3_Gomez_Ossana_Caceres" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/backward"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProyectoProg3_Gomez_Ossana_Caceres"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProyectoProg3_Gomez_Ossana_Caceres"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ProyectoProg3_Gomez_Ossana_Caceres/fast">
-				<Option output="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/ProyectoProg3_Gomez_Ossana_Caceres.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option output="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/ProyectoProg3_Gomez_Ossana_Caceres" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/backward"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProyectoProg3_Gomez_Ossana_Caceres/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProyectoProg3_Gomez_Ossana_Caceres/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pruebaCodigo.cpp">
-				<Option output="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/pruebaCodigo.cpp.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option output="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/pruebaCodigo.cpp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/backward"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 pruebaCodigo.cpp"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 pruebaCodigo.cpp"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pruebaCodigo.cpp/fast">
-				<Option output="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/pruebaCodigo.cpp.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option output="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/pruebaCodigo.cpp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/backward"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 pruebaCodigo.cpp/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 pruebaCodigo.cpp/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Limpio">
-				<Option output="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Limpio.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option output="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Limpio" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/backward"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 Limpio"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 Limpio"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Limpio/fast">
-				<Option output="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Limpio.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option output="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Limpio" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include/c++/12.1.0/backward"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../include"/>
-					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/../../../../include/c++/12.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/12.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 Limpio/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 Limpio/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
+				<Option working_dir="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/Limpio/Limpio.cpp">
+		<Unit filename="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/Limpio/Limpio.cpp">
 			<Option target="Limpio"/>
 		</Unit>
-		<Unit filename="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/main.cpp">
+		<Unit filename="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/main.cpp">
 			<Option target="ProyectoProg3_Gomez_Ossana_Caceres"/>
 		</Unit>
-		<Unit filename="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/pruebaCodigo.cpp">
+		<Unit filename="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/pruebaCodigo.cpp">
 			<Option target="ProyectoProg3_Gomez_Ossana_Caceres"/>
 			<Option target="pruebaCodigo.cpp"/>
 		</Unit>
-		<Unit filename="D:/UCC/UNIVERSIDAD 2023/Segundo Semestre/programacion 3-intento2/PROYECTOFINAL/ProyectoProg3-Gomez-Ossana-Caceres/CMakeLists.txt">
+		<Unit filename="/home/frang/Escritorio/ProyectoProg3-Gomez-Ossana-Caceres/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

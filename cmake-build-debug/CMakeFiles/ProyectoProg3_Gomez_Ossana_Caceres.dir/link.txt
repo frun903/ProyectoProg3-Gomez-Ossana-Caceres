@@ -1,3 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2023.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir/objects.a
-C:\MinGW\bin\ar.exe qc CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir/objects.a @CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir\objects1.rsp
-C:\MinGW\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir/objects.a -Wl,--no-whole-archive -o ProyectoProg3_Gomez_Ossana_Caceres.exe -Wl,--out-implib,libProyectoProg3_Gomez_Ossana_Caceres.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ProyectoProg3_Gomez_Ossana_Caceres.dir\linkLibs.rsp
+/usr/bin/c++ -g CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/main.cpp.o CMakeFiles/ProyectoProg3_Gomez_Ossana_Caceres.dir/pruebaCodigo.cpp.o -o ProyectoProg3_Gomez_Ossana_Caceres 
