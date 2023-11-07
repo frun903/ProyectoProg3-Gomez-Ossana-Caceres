@@ -1,1 +1,3 @@
-/usr/bin/c++ -g CMakeFiles/pruebaCodigo.cpp.dir/pruebaCodigo.cpp.o -o pruebaCodigo.cpp 
+"C:\Program Files\JetBrains\CLion 2023.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\pruebaCodigo.cpp.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\pruebaCodigo.cpp.dir/objects.a @CMakeFiles\pruebaCodigo.cpp.dir\objects1.rsp
+C:\MinGW\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\pruebaCodigo.cpp.dir/objects.a -Wl,--no-whole-archive -o pruebaCodigo.cpp.exe -Wl,--out-implib,libpruebaCodigo.cpp.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\pruebaCodigo.cpp.dir\linkLibs.rsp

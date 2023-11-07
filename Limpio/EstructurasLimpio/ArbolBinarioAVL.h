@@ -159,6 +159,7 @@ template<class T, class U, class V>
 bool ArbolBinarioAVL<T, U, V>::searchAndData(T data, NodoArbolAVL<T, U, V> *r) {
     if (r == nullptr) {
         // Establece el stock en 0 si el valor no se encuentra.
+        cout<<"No se encontro el producto ingresado"<<endl;
         return false;
     }
 

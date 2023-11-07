@@ -8,5 +8,5 @@ add_executable(ProyectoProg3_Gomez_Ossana_Caceres main.cpp
 add_executable( pruebaCodigo.cpp
         pruebaCodigo.cpp)
 add_executable(
-        Limpio
-        Limpio/Limpio.cpp)
+        Procesador_inventario
+        Limpio/Procesador_inventario.cpp)
